@@ -66,7 +66,7 @@
         <div class="mt-12 flex flex-col top-14 left-0 hover:w-64 md:w-64 bg-blue-900 bg-neutral-900 h-full text-white transition-all duration-300 border-none z-10 sidebar">
             <div class="overflow-y-auto overflow-x-hidden flex flex-col justify-between flex-grow">
                 <ul class="flex flex-col py-4 space-y-1 items-center">
-                    <li class="rounded-full border-2 border-blue-500 w-32 h-28 overflow-hidden">
+                    <li class="rounded-full border-2 border-blue-500 w-28 h-28 overflow-hidden">
                         
                         <img src="{{ asset('images/root/ana.jpg') }}" alt="admin picture" class="w-[100%] h-[100%]">
 
