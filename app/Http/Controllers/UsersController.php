@@ -18,6 +18,10 @@ class UsersController extends Controller
     public function loginPage() {
         return view('users.loginPage');
     }
+    // load dashbaord for the admin
+    public function dashbaordPage() {
+        return view('admin.dashbaord');
+    }
     
 
 

@@ -36,5 +36,10 @@ Route::post('/login/authentication', [UsersController::class, 'credentialsVerifi
 // logout route
 Route::get('/logout', [UsersController::class, 'logout']);
 
+// ADMIN ROUTING 
+Route::get('/dashbaord', [UsersController::class, 'dashbaordPage']);
+
+
+
 
 

@@ -10,4 +10,5 @@ class MusicsController extends Controller
     public function displayMusic() {
         return view('music.musicPage');
     }
+    //
 }
