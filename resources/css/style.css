@@ -1,0 +1,39 @@
+body 
+{
+    background-color: #0E040C;
+}
+.login 
+{
+    display: flex;
+
+}
+.login .login-form 
+{
+    margin-right: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login .login-image img
+{
+    display: none;
+   width:370px;
+   position: absolute;
+   height: auto;
+}
+
+.login-form 
+{
+    display: flex;
+    flex-direction: column;
+    margin: .5rem;
+}
+
+.login-form input 
+{
+    width: 250px;
+    height: 30px;
+    border-radius: 1rem;
+    padding: .1rem;
+    margin: .5rem;
+}
