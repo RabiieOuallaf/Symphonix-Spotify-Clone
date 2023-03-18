@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
 use app\Http\Controllers\Bands;
@@ -37,8 +38,8 @@ Route::post('/login/authentication', [UsersController::class, 'credentialsVerifi
 Route::get('/logout', [UsersController::class, 'logout']);
 
 // ADMIN ROUTING 
-Route::get('/dashbaord', [UsersController::class, 'dashbaordPage']);
-
+Route::get('/dashbaord', [AdminsController::class, 'dashbaordPage']);
+Route::get('/addMusic', [AdminsController::class , 'addMusicPage']);
 
 
 

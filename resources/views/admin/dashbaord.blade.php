@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glowguru dashboard</title>
+    <title>symphonix dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
 
 </head>
-<body>
+<body> 
     <div class="min-h-screen grid grid-cols-[auto_1fr] antialiased  bg-neutral-800 text-black text-white w-[100%] overflow-hidden">
 
         <!-- Header -->
@@ -102,7 +102,7 @@
                         <div class="inline-block min-w-full align-middle">
                             <div class="overflow-hidden">
                                 <table class="min-w-full divide-y divide-gray-200 table-fixed">
-                                    <thead class=" bg-violet-500">
+                                    <thead class="bg-violet-500">
                                         <tr>
 
                                             <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-white uppercase text-gray-400">
