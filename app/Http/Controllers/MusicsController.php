@@ -35,7 +35,7 @@ class MusicsController extends Controller
     }
     // The read method is loaded by the admin controller since it's responsible of loading dashbaord pages
 
-    
+    // === Update === //
     public function updateMusic(Request $request , Music $music) {
         $formFields = $request->validate([
             'song_name' => ['required', 'min:3'],
@@ -56,5 +56,10 @@ class MusicsController extends Controller
             dd('something went wrong!');
         };
     }
+    // === Delete === // 
+    public function deleteMusic(Music $music) {
+        $music->delete();
+        return redirect('/dashbaord')->with('message', 'Music deleted !');
+   }
 
 }

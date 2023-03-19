@@ -147,7 +147,11 @@
                                                 <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">soon..</td>
                                                 <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white flex gap-2">
                                                     <button onclick="location.href='/updateMusic/{{$music->id}}'" class="text-yellow-600">update</button>
-                                                    <button onclick="location.href='/music/delete'" class="text-red-800">delete</button>
+                                                    <form action="/deleteMusic/{{$music->id}}" method="POST">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit"class="text-red-800">delete</button>
+                                                    </form>
 
                                                 </td>
 
