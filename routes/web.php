@@ -39,11 +39,12 @@ Route::get('/logout', [UsersController::class, 'logout']);
 // ADMIN ROUTING 
 Route::get('/dashbaord', [AdminsController::class, 'dashbaordPage']);
 Route::get('/addMusic', [AdminsController::class , 'addMusicPage']);
+Route::get('/updateMusic/{music}', [AdminsController::class, 'updateMusicPage']);
 
 // Music routing 
-Route::get('/songs', [MusicsController::class, 'displayMusic']);
-Route::post('/music/create',[MusicsController::class, 'create']);
-
+Route::get('/songs', [MusicsController::class, 'displayMusic']); //read
+Route::post('/music/create',[MusicsController::class, 'createMusic']); // create
+Route::post('/music/update/{music}', [MusicsController::class,'updateMusic']);
 
 
 

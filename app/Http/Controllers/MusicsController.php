@@ -13,7 +13,7 @@ class MusicsController extends Controller
     }
     // ==== ***  MUSIC CRUD *** === //
     // == Create == //
-    public function create(Request $request) {
+    public function createMusic(Request $request) {
         $formFields = $request->validate([
             'song_name' => ['required', 'min:3'],
             'layrics_writer' => ['required', 'min:3'],
@@ -27,19 +27,34 @@ class MusicsController extends Controller
             $formFields['music_banner'] = $request->file('music_banner')->store('public/images/upload/banners', 'public');
            
         }
-        $Music = new Music();
         if(Music::create($formFields)){
             return redirect('/dashbaord')->with('message', 'Song has been added successfully!');
         }else{
             dd('something went wrong!');
         };
     }
-    // == Read == //
-    public function display() {
-        $musics = Music::all();
-        
-        return view('admin.dashbaord', ['musics' => $musics]);
+    // The read method is loaded by the admin controller since it's responsible of loading dashbaord pages
+
+    
+    public function updateMusic(Request $request , Music $music) {
+        $formFields = $request->validate([
+            'song_name' => ['required', 'min:3'],
+            'layrics_writer' => ['required', 'min:3'],
+            'song_langauge' => ['required', 'min:3'],
+            'brand_artiste_website' => ['required', 'min:3'],
+            'artist_name' => ['required','min:3'],
+            'creating_date' => ['required', 'min:3'],
+            'music_banner' => 'required'
+        ]);
+        if($request->hasFile('music_banner')){
+            $formFields['music_banner'] = $request->file('music_banner')->store('public/images/upload/banners', 'public');
+           
+        }
+        if($music->update($formFields)){
+            return redirect('/dashbaord')->with('message', 'Song has been added successfully!');
+        }else{
+            dd('something went wrong!');
+        };
     }
- 
 
 }

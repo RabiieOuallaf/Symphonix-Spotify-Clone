@@ -17,4 +17,8 @@ class AdminsController extends Controller
     public function addMusicPage() {
         return view('admin.addMusic');
     }
+    // load the update music page 
+    public function updateMusicPage(Music $music) {
+        return view('admin.updateMusic', ['music' => $music]);
+    }
 }

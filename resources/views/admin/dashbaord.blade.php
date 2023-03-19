@@ -146,8 +146,8 @@
                                                 <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$music->layrics_writer}}</td>
                                                 <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">soon..</td>
                                                 <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white flex gap-2">
-                                                    <button>update</button>
-                                                    <button>delete</button>
+                                                    <button onclick="location.href='/updateMusic/{{$music->id}}'" class="text-yellow-600">update</button>
+                                                    <button onclick="location.href='/music/delete'" class="text-red-800">delete</button>
 
                                                 </td>
 
