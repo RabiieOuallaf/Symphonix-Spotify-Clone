@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +9,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
 </head>
-<body> 
+
+<body>
     <div class="min-h-screen grid grid-cols-[auto_1fr] antialiased  bg-neutral-800 text-black text-white w-[100%] overflow-hidden">
 
         <!-- Header -->
@@ -19,32 +21,32 @@
             </div>
             <div class="flex justify-between items-center h-full header-right">
                 <ul class="flex items-center">
-                    
+
                     <li>
                         <div class="block w-px h-6 mx-3 bg-neutral-900"></div>
                     </li>
                     <li>
-                        <div class="flex items-center mr-4 hover:text-blue-100 cursor-pointer" onclick="location.href='/addMusic'" >
+                        <div class="flex items-center mr-4 hover:text-blue-100 cursor-pointer" onclick="location.href='/addMusic'">
 
                             <span class="inline-flex mr-1">
                                 <i class="fa-solid fa-arrow-right-from-bracket"></i>
                             </span>
-                                Add Music
+                            Add Music
                         </div>
 
                     </li>
                     <li>
                         <div class="block w-px h-6 mx-3 bg-gray-400 bg-neutral-800"></div>
                     </li>
-                    
+
                     <li>
                         <div class="flex items-center mr-4 hover:text-blue-100 cursor-pointer" onclick="location.href='/updateMusic'">
 
                             <span class="inline-flex mr-1">
                                 <i class="fa-solid fa-arrow-right-from-bracket"></i>
                             </span>
-                                Update Music
-                            </div>
+                            Update Music
+                        </div>
                     </li>
                     <li>
                         <div class="block w-px h-6 mx-3 bg-gray-400 bg-neutral-800"></div>
@@ -67,7 +69,7 @@
             <div class="overflow-y-auto overflow-x-hidden flex flex-col justify-between flex-grow">
                 <ul class="flex flex-col py-4 space-y-1 items-center">
                     <li class="rounded-full border-2 border-blue-500 w-28 h-28 overflow-hidden">
-                        
+
                         <img src="{{ asset('images/root/ana.jpg') }}" alt="admin picture" class="w-[100%] h-[100%]">
 
                     </li>
@@ -93,7 +95,7 @@
         <!-- body -->
         <div class="mt-24 h-full flex flex-wrap justify-around max-sm:flex-col max-sm:items-center col-start-2 col-span-2">
 
-            
+
 
             <div class="max-w-2xl mx-auto">
 
@@ -108,26 +110,23 @@
                                             <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-white uppercase text-gray-400">
                                                 Music ID
                                             </th>
-                                            
+
                                             <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-white uppercase text-gray-400">
                                                 Music Name
                                             </th>
 
                                             <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-white uppercase text-gray-400">
-                                                Price
+                                                Aartiste/brand
                                             </th>
 
 
                                             <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-white uppercase text-gray-400">
-                                                Description
+                                                lyrics writer
                                             </th>
 
+                                        
                                             <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-white uppercase text-gray-400">
-                                                Quantity
-                                            </th>
-
-                                            <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-white uppercase text-gray-400">
-                                                Image
+                                                Music banner
                                             </th>
 
                                             <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-white uppercase text-gray-400">
@@ -139,11 +138,24 @@
 
                                     <tbody class="divide-y divide-gray-200 bg-gray-800 divide-gray-700">
 
-                                    
-                                        
-                                        
-                                    
-                                        
+                                        @foreach ($musics as $music)
+                                        <tr class="hover:bg-gray-700">
+                                                <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$music->id}}</td>
+                                                <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$music->song_name}}</td>
+                                                <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$music->artist_name}}</td>
+                                                <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$music->layrics_writer}}</td>
+                                                <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">soon..</td>
+                                                <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white flex gap-2">
+                                                    <button>update</button>
+                                                    <button>delete</button>
+
+                                                </td>
+
+                                        </tr>
+                                        @endforeach
+
+
+
                                     </tbody>
                                 </table>
                             </div>
@@ -153,17 +165,18 @@
 
 
             </div>
-            
-            
+
+
 
         </div>
-            
 
-        </div>
+
+    </div>
 
 
     <!-- ./body -->
     </div>
 
 </body>
+
 </html>

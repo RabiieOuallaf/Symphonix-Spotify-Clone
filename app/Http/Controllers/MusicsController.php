@@ -12,7 +12,7 @@ class MusicsController extends Controller
         return view('music.musicPage');
     }
     // ==== ***  MUSIC CRUD *** === //
-
+    // == Create == //
     public function create(Request $request) {
         $formFields = $request->validate([
             'song_name' => ['required', 'min:3'],
@@ -33,6 +33,12 @@ class MusicsController extends Controller
         }else{
             dd('something went wrong!');
         };
+    }
+    // == Read == //
+    public function display() {
+        $musics = Music::all();
+        
+        return view('admin.dashbaord', ['musics' => $musics]);
     }
  
 

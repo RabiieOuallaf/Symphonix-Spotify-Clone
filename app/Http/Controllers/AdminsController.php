@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Music;
 use Illuminate\Http\Request;
 
 class AdminsController extends Controller
 {
     // load dashbaord for the admin
     public function dashbaordPage() {
-        return view('admin.dashbaord');
+        $musicModel = new Music();
+        $musics = $musicModel::all();
+        return view('admin.dashbaord',['musics' => $musics]);
     }
     //load the add music page 
     public function addMusicPage() {
