@@ -22,7 +22,7 @@ class Music extends Model
         
     ];
         // Define the relationship between classes // 
-    // public function playlist() {
-    //     return $this->belongsToMany(Playlist::class);
-    // }
+    public function playlist() {
+        return $this->belongsToMany(Playlist::class);
+    }
 }
