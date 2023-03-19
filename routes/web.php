@@ -24,7 +24,6 @@ use App\Http\Controllers\PagesController;
 Route::get('/', [PagesController::class, 'Main'])
     ->middleware(['auth', 'auth:web']);
 
-Route::get('/songs', [MusicsController::class, 'displayMusic']);
 // Register routing 
 Route::get('/register' , [UsersController::class , 'registerPage']);
 Route::post('/register/authentication', [UsersController::class, 'storeUserData']);
@@ -40,6 +39,10 @@ Route::get('/logout', [UsersController::class, 'logout']);
 // ADMIN ROUTING 
 Route::get('/dashbaord', [AdminsController::class, 'dashbaordPage']);
 Route::get('/addMusic', [AdminsController::class , 'addMusicPage']);
+
+// Music routing 
+Route::get('/songs', [MusicsController::class, 'displayMusic']);
+Route::post('/music/create',[MusicsController::class, 'create']);
 
 
 
