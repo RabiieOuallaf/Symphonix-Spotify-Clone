@@ -21,8 +21,8 @@ class Music extends Model
         'music_banner'
         
     ];
-    // Define the relationship between classes // 
-    public function playlist() {
-        return $this->belongsToMany(Playlist::class);
-    }
+    // // Define the relationship between classes // 
+    // public function playlist() {
+    //     return $this->belongsToMany(Playlist::class);
+    // }
 }

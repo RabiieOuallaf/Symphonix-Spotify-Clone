@@ -21,7 +21,7 @@
                     </div>
                     <div class="mt-5">
                         <div class="form">
-                            <form action="/artiste/update" method="POST" enctype="multipart/form-data">
+                            <form action="/artiste/create" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="md:space-y-2 mb-3">
                                     <label class="text-xs font-semibold text-white py-2">artiste banner<abbr class="hidden" title="required">*</abbr></label>
@@ -31,19 +31,19 @@
                                         </div>
                                         <label class="cursor-pointer ">
                                             <span class="focus:outline-none text-white text-sm py-2 px-4 rounded-full bg-violet-400 hover:bg-violet-500 hover:shadow-lg">Browse</span>
-                                            <input type="file"name="artiste_banner" required='require'>
+                                            <input type="file" name="artiste_image" required='require'>
                                         </label>
                                     </div>
                                 </div>
                                 <div class="md:flex flex-row md:space-x-4 w-full text-xs">
                                     <div class="mb-3 space-y-2 w-full text-xs">
                                         <label class="font-semibold text-white py-2">artiste Name <abbr title="required">*</abbr></label>
-                                        <input placeholder="artiste Name" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4" required="required" type="text" name="song_name" value="">
+                                        <input placeholder="artiste Name" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4" required="required" type="text" name="artiste_name" value="">
                                         <p class="text-red text-xs hidden">Please fill out this field.</p>
                                     </div>
                                     <div class="mb-3 space-y-2 w-full text-xs">
-                                        <label class="font-semibold text-white py-2">Lyrics writer <abbr title="required">*</abbr></label>
-                                        <input placeholder="lyrics writer : " class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4" required="required" type="text" name="layrics_writer" value=""">
+                                        <label class="font-semibold text-white py-2">Artiste country<abbr title="required">*</abbr></label>
+                                        <input placeholder="lyrics writer : " class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4" required="required" type="text" name="artiste_country" value=""">
                                         <p class="text-red text-xs hidden">Please fill out this field.</p>
                                     </div>
                                 </div>
@@ -60,26 +60,11 @@
                                         <input type="text" name="brand_artiste_website" class="flex-shrink flex-grow flex-auto leading-normal w-px flex-1 border border-l-0 h-10 border-grey-light rounded-lg rounded-l-none px-3 relative focus:border-blue focus:shadow" placeholder="https://" value="">
                                     </div>
                                 </div>
-                                <div class="md:flex md:flex-row md:space-x-4 w-full text-xs">
-                                    <div class="w-full flex flex-col mb-3">
-                                        <label class="font-semibold text-white py-2">artiste langauge</label>
-                                        <input placeholder="artisteLangauge" name="song_langauge" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4" type="text" value="">
-                                    </div>
-                                    <div class="w-full flex flex-col mb-3">
-                                        <label class="font-semibold text-white py-2">brand/artiste<abbr title="required">*</abbr></label>
-                                        <select class="block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4 md:w-full " required="required" value="" name="artist_name">
-                                            <option value="brand1">Seleted brand/artiste</option>
-                                            <option value="brand2">Cochin,KL</option>
-                                            <option value="brand3">Mumbai,MH</option>
-                                            <option value="brand4">Bangalore,KA</option>
-                                        </select>
-                                        <p class="text-sm text-red-500 hidden mt-3" id="error">Please fill out this field.</p>
-                                    </div>
-                                </div>
+                                
                                 <div class="md:flex flex-row md:space-x-4 w-full text-xs">
                                     <div class="mb-3 space-y-2 w-full text-xs">
-                                        <label class="font-semibold text-white py-2">artiste realse date <abbr title="required">*</abbr></label>
-                                        <input placeholder="artiste Name" name="creating_date"class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4" required="required" type="date">
+                                        <label class="font-semibold text-white py-2">artiste birthday<abbr title="required">*</abbr></label>
+                                        <input placeholder="artiste Name" name="artiste_brithday"class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4" required="required" type="date">
                                         <p class="text-red text-xs hidden">Please fill out this field.</p>
                                     </div>
                                     

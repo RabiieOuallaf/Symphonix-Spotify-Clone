@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminsController;
+use App\Http\Controllers\ArtistesController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
 use app\Http\Controllers\Bands;
@@ -50,4 +51,7 @@ Route::get('/songs', [MusicsController::class, 'displayMusic']); //read
 Route::post('/music/create',[MusicsController::class, 'createMusic']); // create
 Route::post('/music/update/{music}', [MusicsController::class,'updateMusic']);
 Route::delete('/deleteMusic/{music}', [MusicsController::class, 'deleteMusic']);
+
+// Artiste routing 
+Route::post('/artiste/create', [ArtistesController::class, 'createArtiste']);
 
