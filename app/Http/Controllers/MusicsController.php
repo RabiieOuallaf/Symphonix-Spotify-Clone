@@ -24,7 +24,7 @@ class MusicsController extends Controller
             'music_banner' => 'required'
         ]);
         if($request->hasFile('music_banner')){
-            $formFields['music_banner'] = $request->file('music_banner')->store('public/images/upload/banners', 'public');
+            $formFields['music_banner'] = $request->file('music_banner')->store('public/upload');
            
         }
         if(Music::create($formFields)){

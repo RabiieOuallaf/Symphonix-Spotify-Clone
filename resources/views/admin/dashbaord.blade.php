@@ -152,7 +152,10 @@
                                                 <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$music->song_name}}</td>
                                                 <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$music->artist_name}}</td>
                                                 <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$music->layrics_writer}}</td>
-                                                <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">soon..</td>
+                                                <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                    <img src="{{ Storage::url($music->music_banner) }}" alt="song cover">
+                                                </td>
+                                                
                                                 <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white flex gap-2">
                                                     <button onclick="location.href='/updateMusic/{{$music->id}}'" class="text-yellow-600">update</button>
                                                     <form action="/deleteMusic/{{$music->id}}" method="POST">
