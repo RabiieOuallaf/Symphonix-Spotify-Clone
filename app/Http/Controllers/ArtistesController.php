@@ -17,7 +17,7 @@ class ArtistesController extends Controller
             'artiste_brithday' => ['required', 'min:3']
         ]);
         if($request->hasFile('artiste_image')) {
-            $formFields['artiste_image'] = $request->file('artiste_image')->store('public/images/upload/artistesImages', 'public');
+            $formFields['artiste_image'] = $request->file('artiste_image')->store('public/upload');
         }
         if(Artiste::create($formFields)) {
             return redirect('/artisteDashbaord')->with('message', 'Artiste Added!');
@@ -35,7 +35,7 @@ class ArtistesController extends Controller
             'artiste_brithday' => ['required', 'min:3']
         ]);
         if($request->hasFile('artiste_image')) {
-            $formFields['artiste_image'] = $request->file('artiste_image')->store('public/images/upload/artistesImages', 'public');
+            $formFields['artiste_image'] = $request->file('artiste_image')->store('public/upload');
         }
         if($artiste->update($formFields)) {
             return redirect('/artisteDashbaord')->with('message', 'Artiste updated!');
