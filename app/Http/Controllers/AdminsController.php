@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Music;
 use App\Models\Artiste;
+use App\Models\Band;
+
 use Illuminate\Http\Request;
 
 class AdminsController extends Controller
@@ -41,7 +43,9 @@ class AdminsController extends Controller
     
     // === Band === // 
     public function dashbaordBand() {
-        return view('admin.band.bandDashbaord');
+        $bandModel = new Band();
+        $bands = $bandModel::all();
+        return view('admin.band.bandDashbaord', ['bands' => $bands]);
     }
     public function addBandPage() {
         return view('admin.band.addBand');

@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class band extends Model
+class Band extends Model
 {
     use HasFactory;
     protected $fillable = [

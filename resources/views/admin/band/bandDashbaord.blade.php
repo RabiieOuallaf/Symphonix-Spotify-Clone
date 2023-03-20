@@ -124,12 +124,12 @@
                                             </th>
 
                                             <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-white uppercase text-gray-400">
-                                                Aartiste/brand
+                                                Memebers
                                             </th>
 
 
                                             <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-white uppercase text-gray-400">
-                                                lyrics writer
+                                               Band country
                                             </th>
 
                                         
@@ -146,9 +146,28 @@
 
                                     <tbody class="divide-y divide-gray-200 bg-gray-800 divide-gray-700">
 
-                                        
+                                    @foreach ($bands as $band)
+                                        <tr class="hover:bg-gray-700">
+                                                <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$band->id}}</td>
+                                                <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$band->band_name}}</td>
+                                                <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$band->memebers}}</td>
+                                                <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$band->band_country}}</td>
+                                                <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                    <img src="{{ Storage::url($band->band_banner) }}" alt="song cover">
+                                                </td>
+                                                
+                                                <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white flex gap-2">
+                                                    <button onclick="location.href='/updateband/{{$band->id}}'" class="text-yellow-600">update</button>
+                                                    <form action="/deleteband/{{$band->id}}" method="POST">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit"class="text-red-800">delete</button>
+                                                    </form>
 
+                                                </td>
 
+                                        </tr>
+                                        @endforeach
 
                                     </tbody>
                                 </table>
