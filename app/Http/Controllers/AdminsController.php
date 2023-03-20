@@ -50,4 +50,7 @@ class AdminsController extends Controller
     public function addBandPage() {
         return view('admin.band.addBand');
     }
+    public function updateBandPage(Band $band) {
+        return view('admin.band.updateBand', ['band' => $band]);
+    }
 }

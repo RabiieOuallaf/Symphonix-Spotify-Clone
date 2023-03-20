@@ -63,3 +63,6 @@ Route::delete('/deleteArtiste/{artiste}', [ArtistesController::class, 'deleteArt
 // Band routing 
 Route::get('/addBand', [AdminsController::class , 'addBandPage']); // display 
 Route::post('/band/create', [BandsController::class, 'createBand']); //  create
+Route::get('/updateband/{band}', [AdminsController::class, 'updateBandPage']); // update page
+Route::post('/update/band/{band}', [BandsController::class, 'updateBand']); // update method 
+Route::delete('/deleteband/{band}', [BandsController::class, 'deleteband']);
