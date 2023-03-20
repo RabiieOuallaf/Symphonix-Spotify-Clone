@@ -39,4 +39,11 @@ class AdminsController extends Controller
         return view('admin.artiste.updateArtiste', ['artiste' => $artiste]);
     }
     
+    // === Band === // 
+    public function dashbaordBand() {
+        return view('admin.band.bandDashbaord');
+    }
+    public function addBandPage() {
+        return view('admin.band.addBand');
+    }
 }

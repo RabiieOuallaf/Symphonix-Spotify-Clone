@@ -8,6 +8,7 @@ use app\Http\Controllers\Bands;
 use app\Http\Controllers\Musics;
 use app\Http\Controllers\Clients;
 use app\Http\Controllers\Artists;
+use App\Http\Controllers\BandsController;
 use App\Http\Controllers\MusicsController;
 use App\Http\Controllers\PagesController;
 
@@ -40,6 +41,7 @@ Route::get('/logout', [UsersController::class, 'logout']);
 // ADMIN ROUTING 
 Route::get('/dashbaord', [AdminsController::class, 'dashbaordPage']);
 Route::get('/artisteDashbaord', [AdminsController::class, 'dashbaordArtistePage']);
+Route::get('/bandDashbaord', [AdminsController::class , 'dashbaordBand']);
 // Add / Update Pages for artistes music .... 
 
 Route::get('/addMusic', [AdminsController::class , 'addMusicPage']);
@@ -57,3 +59,7 @@ Route::post('/artiste/create', [ArtistesController::class, 'createArtiste']);
 Route::put('/artiste/update/{artiste}', [ArtistesController::class, 'updateArtiste']); // update
 Route::get('/updateArtiset/{artiste}', [AdminsController::class , 'updateArtistePage']); // read
 Route::delete('/deleteArtiste/{artiste}', [ArtistesController::class, 'deleteArtiste']);
+
+// Band routing 
+Route::get('/addBand', [AdminsController::class , 'addBandPage']); // display 
+Route::post('/band/create', [BandsController::class, 'createBand']); //  create

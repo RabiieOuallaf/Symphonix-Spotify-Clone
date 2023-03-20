@@ -26,12 +26,12 @@
                         <div class="block w-px h-6 mx-3 bg-neutral-900"></div>
                     </li>
                     <li>
-                        <div class="flex items-center mr-4 hover:text-blue-100 cursor-pointer" onclick="location.href='/addMusic'">
+                        <div class="flex items-center mr-4 hover:text-blue-100 cursor-pointer" onclick="location.href='/addBand'">
 
                             <span class="inline-flex mr-1">
                                 <i class="fa-solid fa-arrow-right-from-bracket"></i>
                             </span>
-                            Add Music
+                            Add Band
                         </div>
 
                     </li>
@@ -40,12 +40,12 @@
                     </li>
 
                     <li>
-                        <div class="flex items-center mr-4 hover:text-blue-100 cursor-pointer" onclick="location.href='/updateMusic'">
+                        <div class="flex items-center mr-4 hover:text-blue-100 cursor-pointer" onclick="location.href='/updateBand'">
 
                             <span class="inline-flex mr-1">
                                 <i class="fa-solid fa-arrow-right-from-bracket"></i>
                             </span>
-                            Update Music
+                            Update Band
                         </div>
                     </li>
                     <li>
@@ -83,7 +83,7 @@
                             <span class="inline-flex justify-center items-center ml-4">
                                 <i class="fa-solid fa-gauge"></i>
                             </span>
-                            <span class="ml-2 text-sm tracking-wide truncate">Music</span>
+                            <span class="ml-2 text-sm tracking-wide truncate">Band</span>
                         </a>
                     </li>
                     <li>
@@ -92,14 +92,6 @@
                                 <i class="fa-solid fa-gauge"></i>
                             </span>
                             <span class="ml-2 text-sm tracking-wide truncate">Artiste</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/bandDashbaord" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800 hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 hover:border-gray-800 pr-6">
-                            <span class="inline-flex justify-center items-center ml-4">
-                                <i class="fa-solid fa-gauge"></i>
-                            </span>
-                            <span class="ml-2 text-sm tracking-wide truncate">Band</span>
                         </a>
                     </li>
                 </ul>
@@ -124,11 +116,11 @@
                                         <tr>
 
                                             <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-white uppercase text-gray-400">
-                                                Music ID
+                                                Band ID
                                             </th>
 
                                             <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-white uppercase text-gray-400">
-                                                Music Name
+                                                Band Name
                                             </th>
 
                                             <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-white uppercase text-gray-400">
@@ -142,7 +134,7 @@
 
                                         
                                             <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-white uppercase text-gray-400">
-                                                Music banner
+                                                Band banner
                                             </th>
 
                                             <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-white uppercase text-gray-400">
@@ -154,28 +146,7 @@
 
                                     <tbody class="divide-y divide-gray-200 bg-gray-800 divide-gray-700">
 
-                                        @foreach ($musics as $music)
-                                        <tr class="hover:bg-gray-700">
-                                                <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$music->id}}</td>
-                                                <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$music->song_name}}</td>
-                                                <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$music->artist_name}}</td>
-                                                <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$music->layrics_writer}}</td>
-                                                <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                                    <img src="{{ Storage::url($music->music_banner) }}" alt="song cover">
-                                                </td>
-                                                
-                                                <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white flex gap-2">
-                                                    <button onclick="location.href='/updateMusic/{{$music->id}}'" class="text-yellow-600">update</button>
-                                                    <form action="/deleteMusic/{{$music->id}}" method="POST">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button type="submit"class="text-red-800">delete</button>
-                                                    </form>
-
-                                                </td>
-
-                                        </tr>
-                                        @endforeach
+                                        
 
 
 
