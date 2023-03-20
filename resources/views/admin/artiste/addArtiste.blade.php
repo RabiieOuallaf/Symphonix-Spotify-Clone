@@ -10,7 +10,7 @@
 </head>
 
 <body class="h-screen overflow-hidden flex items-center justify-center">
-    <div class="relative w-full flex items-center justify-center bg-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 bg-gray-500 bg-no-repeat bg-cover relative items-center" style="background-image: url(https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80); background-size:cover;">
+    <div class="relative w-full flex items-center justify-center bg-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 bg-gray-500 bg-no-repeat bg-cover relative items-center" style="background-image: url(https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80); background-size:cover;">
         <div class="absolute bg-black opacity-60 inset-0 z-0"></div>
         <div class="max-w-2xl w-full space-y-8 p-10 bg-neutral-900  rounded-xl shadow-lg z-10">
             <div class="grid  gap-8 grid-cols-1">
@@ -21,7 +21,7 @@
                     </div>
                     <div class="mt-5">
                         <div class="form">
-                            <form action="/artiste/update/{{$artiste->id}}" method="POST" enctype="multipart/form-data">
+                            <form action="/artiste/update" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="md:space-y-2 mb-3">
                                     <label class="text-xs font-semibold text-white py-2">artiste banner<abbr class="hidden" title="required">*</abbr></label>
@@ -38,12 +38,12 @@
                                 <div class="md:flex flex-row md:space-x-4 w-full text-xs">
                                     <div class="mb-3 space-y-2 w-full text-xs">
                                         <label class="font-semibold text-white py-2">artiste Name <abbr title="required">*</abbr></label>
-                                        <input placeholder="artiste Name" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4" required="required" type="text" name="song_name" value="{{$artiste->song_name}}">
+                                        <input placeholder="artiste Name" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4" required="required" type="text" name="song_name" value="">
                                         <p class="text-red text-xs hidden">Please fill out this field.</p>
                                     </div>
                                     <div class="mb-3 space-y-2 w-full text-xs">
                                         <label class="font-semibold text-white py-2">Lyrics writer <abbr title="required">*</abbr></label>
-                                        <input placeholder="lyrics writer : " class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4" required="required" type="text" name="layrics_writer" value="{{$artiste->layrics_writer}}">
+                                        <input placeholder="lyrics writer : " class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4" required="required" type="text" name="layrics_writer" value=""">
                                         <p class="text-red text-xs hidden">Please fill out this field.</p>
                                     </div>
                                 </div>
@@ -57,17 +57,17 @@
                                                 </svg>
                                             </span>
                                         </div>
-                                        <input type="text" name="brand_artiste_website" class="flex-shrink flex-grow flex-auto leading-normal w-px flex-1 border border-l-0 h-10 border-grey-light rounded-lg rounded-l-none px-3 relative focus:border-blue focus:shadow" placeholder="https://" value="{{$artiste->brand_artiste_website}}">
+                                        <input type="text" name="brand_artiste_website" class="flex-shrink flex-grow flex-auto leading-normal w-px flex-1 border border-l-0 h-10 border-grey-light rounded-lg rounded-l-none px-3 relative focus:border-blue focus:shadow" placeholder="https://" value="">
                                     </div>
                                 </div>
                                 <div class="md:flex md:flex-row md:space-x-4 w-full text-xs">
                                     <div class="w-full flex flex-col mb-3">
                                         <label class="font-semibold text-white py-2">artiste langauge</label>
-                                        <input placeholder="artisteLangauge" name="song_langauge" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4" type="text" value="{{$artiste->song_langauge}}">
+                                        <input placeholder="artisteLangauge" name="song_langauge" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4" type="text" value="">
                                     </div>
                                     <div class="w-full flex flex-col mb-3">
                                         <label class="font-semibold text-white py-2">brand/artiste<abbr title="required">*</abbr></label>
-                                        <select class="block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4 md:w-full " required="required" value="{{$artiste->artist_name}}" name="artist_name">
+                                        <select class="block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4 md:w-full " required="required" value="" name="artist_name">
                                             <option value="brand1">Seleted brand/artiste</option>
                                             <option value="brand2">Cochin,KL</option>
                                             <option value="brand3">Mumbai,MH</option>
@@ -79,7 +79,7 @@
                                 <div class="md:flex flex-row md:space-x-4 w-full text-xs">
                                     <div class="mb-3 space-y-2 w-full text-xs">
                                         <label class="font-semibold text-white py-2">artiste realse date <abbr title="required">*</abbr></label>
-                                        <input placeholder="artiste Name" name="creating_date"class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4" required="required" type="date" name="integration[shop_name]" id="integration_shop_name">
+                                        <input placeholder="artiste Name" name="creating_date"class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4" required="required" type="date">
                                         <p class="text-red text-xs hidden">Please fill out this field.</p>
                                     </div>
                                     
@@ -103,10 +103,5 @@
 </html>
 
 <style>
-    .myBg 
-    {
-        background: url('../../../public/images/backgrounds/addartisteBackground.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-    }
+
 </style>

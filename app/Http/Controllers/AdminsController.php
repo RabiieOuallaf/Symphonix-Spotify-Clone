@@ -26,8 +26,11 @@ class AdminsController extends Controller
 
     // === Artiste === //
 
-    public function dashbaordArtistePage(){
+    public function dashbaordArtistePage() {
         return view('admin.artiste.artisteDashbaord');
+    }
+    public function addAritstePage() {  
+        return view('admin.artiste.addArtiste');
     }
     
 }

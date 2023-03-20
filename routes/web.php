@@ -39,9 +39,12 @@ Route::get('/logout', [UsersController::class, 'logout']);
 // ADMIN ROUTING 
 Route::get('/dashbaord', [AdminsController::class, 'dashbaordPage']);
 Route::get('/artisteDashbaord', [AdminsController::class, 'dashbaordArtistePage']);
+// Add / Update Pages for artistes music .... 
+
 Route::get('/addMusic', [AdminsController::class , 'addMusicPage']);
 Route::put('/updateMusic/{music}', [AdminsController::class, 'updateMusicPage']);
 
+Route::get('/addArtiste', [AdminsController::class, 'addAritstePage']);
 // Music routing 
 Route::get('/songs', [MusicsController::class, 'displayMusic']); //read
 Route::post('/music/create',[MusicsController::class, 'createMusic']); // create
