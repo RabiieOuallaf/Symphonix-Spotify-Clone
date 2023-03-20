@@ -38,6 +38,7 @@ Route::get('/logout', [UsersController::class, 'logout']);
 
 // ADMIN ROUTING 
 Route::get('/dashbaord', [AdminsController::class, 'dashbaordPage']);
+Route::get('/artisteDashbaord', [AdminsController::class, 'dashbaordArtistePage']);
 Route::get('/addMusic', [AdminsController::class , 'addMusicPage']);
 Route::put('/updateMusic/{music}', [AdminsController::class, 'updateMusicPage']);
 
@@ -46,5 +47,4 @@ Route::get('/songs', [MusicsController::class, 'displayMusic']); //read
 Route::post('/music/create',[MusicsController::class, 'createMusic']); // create
 Route::post('/music/update/{music}', [MusicsController::class,'updateMusic']);
 Route::delete('/deleteMusic/{music}', [MusicsController::class, 'deleteMusic']);
-
 

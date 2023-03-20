@@ -13,12 +13,21 @@ class AdminsController extends Controller
         $musics = $musicModel::all();
         return view('admin.dashbaord',['musics' => $musics]);
     }
+    // === Music === //
+
     //load the add music page 
     public function addMusicPage() {
-        return view('admin.addMusic');
+        return view('admin.music.addMusic');
     }
     // load the update music page 
     public function updateMusicPage(Music $music) {
-        return view('admin.updateMusic', ['music' => $music]);
+        return view('admin.music.updateMusic', ['music' => $music]);
     }
+
+    // === Artiste === //
+
+    public function dashbaordArtistePage(){
+        return view('admin.artiste.artisteDashbaord');
+    }
+    
 }
