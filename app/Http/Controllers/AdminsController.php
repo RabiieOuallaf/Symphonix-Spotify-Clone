@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Music;
+use App\Models\Artiste;
 use Illuminate\Http\Request;
 
 class AdminsController extends Controller
@@ -27,10 +28,15 @@ class AdminsController extends Controller
     // === Artiste === //
 
     public function dashbaordArtistePage() {
-        return view('admin.artiste.artisteDashbaord');
+        $artisteModel = new Artiste();
+        $artistes = $artisteModel::all();
+        return view('admin.artiste.artisteDashbaord', ['artistes' => $artistes]);
     }
     public function addAritstePage() {  
         return view('admin.artiste.addArtiste');
+    }
+    public function updateArtistePage(Artiste $artiste) {
+        return view('admin.artiste.updateArtiste', ['artiste' => $artiste]);
     }
     
 }

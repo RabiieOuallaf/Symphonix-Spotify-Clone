@@ -54,4 +54,6 @@ Route::delete('/deleteMusic/{music}', [MusicsController::class, 'deleteMusic']);
 
 // Artiste routing 
 Route::post('/artiste/create', [ArtistesController::class, 'createArtiste']);
-
+Route::put('/artiste/update/{artiste}', [ArtistesController::class, 'updateArtiste']); // update
+Route::get('/updateArtiset/{artiste}', [AdminsController::class , 'updateArtistePage']); // read
+Route::delete('/deleteArtiste/{artiste}', [ArtistesController::class, 'deleteArtiste']);

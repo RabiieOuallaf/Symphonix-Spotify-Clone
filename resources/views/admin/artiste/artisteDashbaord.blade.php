@@ -25,6 +25,7 @@
                     <li>
                         <div class="block w-px h-6 mx-3 bg-neutral-900"></div>
                     </li>
+                    
                     <li>
                         <div class="flex items-center mr-4 hover:text-blue-100 cursor-pointer" onclick="location.href='/addArtiste'">
 
@@ -79,7 +80,15 @@
                         </div>
                     </li>
                     <li>
-                        <a href="dashbaord" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800 hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 hover:border-gray-800 pr-6">
+                        <a href="/dashbaord" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800 hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 hover:border-gray-800 pr-6">
+                            <span class="inline-flex justify-center items-center ml-4">
+                                <i class="fa-solid fa-gauge"></i>
+                            </span>
+                            <span class="ml-2 text-sm tracking-wide truncate">Dashbaord</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/artisteDashbaord" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800 hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 hover:border-gray-800 pr-6">
                             <span class="inline-flex justify-center items-center ml-4">
                                 <i class="fa-solid fa-gauge"></i>
                             </span>
@@ -116,17 +125,17 @@
                                             </th>
 
                                             <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-white uppercase text-gray-400">
-                                                Aartiste/brand
+                                                Artiste birthday
                                             </th>
 
 
                                             <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-white uppercase text-gray-400">
-                                                lyrics writer
+                                                Artiste image
                                             </th>
 
                                         
                                             <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-white uppercase text-gray-400">
-                                                Artiste banner
+                                                Artiste country
                                             </th>
 
                                             <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-white uppercase text-gray-400">
@@ -138,8 +147,27 @@
 
                                     <tbody class="divide-y divide-gray-200 bg-gray-800 divide-gray-700">
 
-                                        
+                                    @foreach ($artistes as $artiste)
 
+                                        <tr class="hover:bg-gray-700">
+                                                <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$artiste->id}}</td>
+                                                <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$artiste->artiste_name}}</td>
+                                                <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$artiste->artiste_brithday}}</td>
+                                                <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">soon..</td>
+                                                <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$artiste->artiste_country}}</td>
+                                                <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white flex gap-2">
+                                                    <button onclick="location.href='/updateArtiset/{{$artiste->id}}'" class="text-yellow-600">update</button>
+                                                    <form action="/deleteArtiste/{{$artiste->id}}" method="POST">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit"class="text-red-800">delete</button>
+                                                    </form>
+
+                                                </td>
+
+                                        </tr>
+                                        @endforeach
+                                    
 
 
                                     </tbody>
