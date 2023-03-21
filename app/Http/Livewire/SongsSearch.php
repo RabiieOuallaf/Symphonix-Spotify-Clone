@@ -9,7 +9,7 @@ class SongsSearch extends Component
 {
     public $searchQuery;
     public $songs;
-
+    public $playListSongs = [];
     
     protected $rules = [
         'searchQuery' => 'required|min:3'
@@ -32,5 +32,7 @@ class SongsSearch extends Component
             return view('livewire.songs-search', ['songs' => "There's no song with that name"]);
         }
     }
+    
+
     
 }
