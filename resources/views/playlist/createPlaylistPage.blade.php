@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create playlist</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <livewire:styles />
+    <livewire:scripts />
+
 </head>
 
 <body class="h-screen overflow-hidden flex items-center justify-center">
@@ -48,12 +51,7 @@
                                     </div>
                                 </div>
                                 <div class="md:flex flex-row md:space-x-4 w-full text-xs">
-                                    <div class="mb-3 space-y-2 w-full text-xs">
-                                        <label class="font-semibold text-white py-2">add songs<abbr title="required">*</abbr></label>
-                                        <input placeholder="Searching..." name="playlist_songs" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4" required="required" type="search" >
-                                        <p class="text-red text-xs hidden">Please fill out this field.</p>
-                                    </div>
-                                    
+                                    @livewire('songs-search')
                                 </div>
 
                                 <p class="text-xs text-red-500 text-right my-3">Required fields are marked with an

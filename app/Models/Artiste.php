@@ -18,7 +18,7 @@ class Artiste extends Model
 
     // // Define the relationship between classes // 
 
-    // public function music() {
-    //     return $this->belongsToMany(Music::);
-    // }
+    public function music() {
+        return $this->belongsToMany(Music::class);
+    }
 }
