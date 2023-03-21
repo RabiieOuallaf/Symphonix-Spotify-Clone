@@ -7,6 +7,6 @@
     class Playlist extends Component {
         public function render()
         {
-            return view('ComponentsmusicComponents.playlist');
+            return view('Components.playlist');
         }
     }

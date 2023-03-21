@@ -12,6 +12,7 @@ use App\Http\Controllers\BandsController;
 use App\Http\Controllers\MusicsController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\PlaylistsController;
+use App\Models\Playlist;
 
 /*
 |--------------------------------------------------------------------------
@@ -69,10 +70,11 @@ Route::post('/update/band/{band}', [BandsController::class, 'updateBand']); // u
 Route::delete('/deleteband/{band}', [BandsController::class, 'deleteband']);
 
 // Playlist Routing 
+Route::get('/playlists', [PlaylistsController::class , 'playlistPage']);
 
-Route::get('/addBand', [PagesController::class, 'addPlaylist']);
-Route::get('/updateBand', [PagesController::class, 'updatePlaylist']);
+Route::get('/createPlaylist', [PlaylistsController::class, 'createPlaylistPage']);
+Route::get('/updateBand', [PlaylistsController::class, 'updatePlaylist']);
 
-Route::post('/add/band', [PlaylistsController::class, 'addBand']);
+Route::post('/add/playlist', [PlaylistsController::class, 'addBand']);
 Route::post('/update/playlist/{playlist}', [PlaylistsController::class, 'updatePlaylist']);
 Route::delete('/deleteband/{playlist}', [PlaylistsController::class, 'deletePlaylist']);

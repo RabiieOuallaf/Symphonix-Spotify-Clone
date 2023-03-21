@@ -1,6 +1,12 @@
 <section class="playlists w-[50%] ">
 
-    <h2 class="text-3xl font-semibold text-white my-5" style="margin-left: -5rem;">Made for you </h2>
+    <div class="header-section flex w-[100%] justify-between items-center">
+        <h2 class="text-3xl font-semibold text-white my-5" style="margin-left: -5rem;">Your playlists : </h2>
+        <div class="text-white text-4xl duration-300 cursor-pointer" style="border: white 1px solid; border-radius: 100%; width:34px; height:34px" onclick="location.href='/createPlaylist'">
+            <span class="text-purple-800 absolute font-bold hover:text-white duration-300" style="top:94px;right:130px">+</span>
+        </div>
+    </div>
+    
     <div class="playlists-container grid justify-content-center grid-cols-4 gap-x-10 w-[100%]">
 
         <div class="playlist" onclick="location.href='/songs'">

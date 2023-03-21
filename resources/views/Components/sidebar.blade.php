@@ -8,7 +8,7 @@
    <div class="sidebar-sections text-zinc-400 flex flex-col text-center gap-7 my-10">
 
         <!-- Home -->
-        <div class="home cursor-pointer hover:text-violet-600 ease-in-out duration-200">
+        <div class="home cursor-pointer hover:text-violet-600 ease-in-out duration-200" onclick="location.href='/'">
             <i class="fa-solid fa-house mx-2"></i>
             <span>Home</span>
         </div>
@@ -20,7 +20,7 @@
         </div>
 
         <!-- Playlists -->
-        <div class="playlists cursor-pointer hover:text-violet-600 ease-in-out duration-200">
+        <div class="playlists cursor-pointer hover:text-violet-600 ease-in-out duration-200" onclick="location.href='/playlists'">
             <i class="fa-solid fa-list mx-2"></i>
             <span>Playlist</span>
         </div>
