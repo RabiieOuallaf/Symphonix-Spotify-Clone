@@ -78,3 +78,7 @@ Route::get('/updateBand', [PlaylistsController::class, 'updatePlaylist']);
 Route::post('/add/playlist', [PlaylistsController::class, 'addBand']);
 Route::post('/update/playlist/{playlist}', [PlaylistsController::class, 'updatePlaylist']);
 Route::delete('/deleteband/{playlist}', [PlaylistsController::class, 'deletePlaylist']);
+
+// == Songs searching routes == //
+
+Route::get('/songs/search', 'SongsController@search')->name('songs.search');
