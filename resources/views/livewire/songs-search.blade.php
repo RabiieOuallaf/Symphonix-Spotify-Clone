@@ -5,12 +5,31 @@
     @if($songs && count($songs))
         <ul>
             @foreach($songs as $song)
-                <li class="text-xl text-white cursor-pointer" id="songs">{{ $song->song_name }}</li>
+                <li class="text-xl text-white cursor-pointer" id="songs" onclick="addSongToInput('{{ $song->song_name }}', '{{$song->id}}')">{{ $song->song_name }}</li>
             @endforeach
         </ul>
-    @endif
+    @endif'
     <p class="text-red text-xs hidden">Please fill out this field.</p>
     <script src="{{asset('js/songs.js')}}"></script>
 
 </div>
+<script>
+    let songsList = [];
+    const addSongToInput = (songName, songId) => {
+        // if the song already exsite in the array 
+        const exsitingSong = songsList.find((song) => song.songId === songId);
+        if(exsitingSong) {
+            return;
+        }
+        songsList.push({
+            'songName' : songName,
+            'songId': songId
+        });
+        console.log(songsList);
+        
 
+    
+    }
+
+    
+</script>
