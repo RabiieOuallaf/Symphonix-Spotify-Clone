@@ -12,4 +12,6 @@ class PlaylistsController extends Controller
     public function createPlaylistPage() {
         return view('playlist.createPlaylistPage');
     }
+    public function createPlaylist(Request $request) {
+    }
 }
