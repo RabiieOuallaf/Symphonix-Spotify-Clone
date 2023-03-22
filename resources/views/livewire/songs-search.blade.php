@@ -33,11 +33,28 @@
         });
         playlist_songs.value = JSON.stringify(songsList);
 
-         // add the selected song name to the selected_songs element
+        // add the selected song name to the selected_songs element
         const selectedSongElement = document.createElement('span');
-        selectedSongElement.innerHTML = songName + '</br>';
+        selectedSongElement.innerHTML = songName + '<span class="text-red-400" onclick="removeSong()" data-songId="`${songId}`"> X </span>' + '</br>' ;
         selected_songs.appendChild(selectedSongElement);
     }
+    
+    function removeSong() {
+        const songElement = event.target.parentNode;
+        const songId = songElement.dataset.songId;
+        
+        // remove the song from the songsList array
+        const songIndex = songsList.findIndex((song) => song.songId === songId);
+        songsList.splice(songIndex, 1);
+
+        // remove the song from the DOM
+        songElement.remove();
+        
+        // update the playlist_songs input with the updated songsList
+        playlist_songs.value = JSON.stringify(songsList);
+    }
+
+       
 
     
 </script>
