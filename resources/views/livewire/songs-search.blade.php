@@ -11,8 +11,8 @@
         </ul>
     @endif
     <div>
-        <span class="text-lg text-white">Selected Songs</span>
-        <div id="Selected_songs"  class="text-xl text-white cursor-pointer"></div>
+        <span class="text-xl font-semibold text-purple-500">Selected Songs</span>
+        <div id="Selected_songs"  class="text-lg text-white cursor-pointer"></div>
     </div>
     <p class="text-red text-xs hidden">Please fill out this field.</p>
 
