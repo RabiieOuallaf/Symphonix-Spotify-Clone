@@ -29,7 +29,7 @@ class AdminsController extends Controller
 
     // === Artiste === //
 
-    public function dashbaordArtistePage() {
+    public function dashbaordArtistePage() { 
         $artisteModel = new Artiste();
         $artistes = $artisteModel::all();
         return view('admin.artiste.artisteDashbaord', ['artistes' => $artistes]);

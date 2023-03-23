@@ -34,13 +34,13 @@
                                         </div>
                                         <label class="cursor-pointer ">
                                             <span class="focus:outline-none text-white text-sm py-2 px-4 rounded-full bg-violet-400 hover:bg-violet-500 hover:shadow-lg">Browse</span>
-                                            <input type="file"name="playlist_banner" required='require'>
+                                            <input type="file" name="playlist_banner" required='require'>
                                         </label>
                                     </div>
                                 </div>
                                 <div class="playlist-creator hidden">
                                     @if(auth()->check()) 
-                                    <input type="text" name="user_email" value="{{ auth()->user()->email }}" class="hidden" readonly>
+                                        <input type="text" name="creator_email" value="{{ auth()->user()->email }}">
                                     @endif
                                 </div>
                                 
