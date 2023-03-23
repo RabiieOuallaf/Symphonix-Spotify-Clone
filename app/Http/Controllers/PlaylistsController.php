@@ -8,12 +8,14 @@ use Illuminate\Http\Request;
 
 class PlaylistsController extends Controller
 {
-    public function playlistPage() {
-        return view('playlist.playlistsPage');
+    public function playlistPage(Playlist $playlist) {
+        $Playlist = $playlist::all();
+        return view('playlist.playlistsPage', ['playlists' => $Playlist]);
     }
     public function createPlaylistPage() {
         return view('playlist.createPlaylistPage');
     }
+
     public function createPlaylistWithSongs(Request $request) {
         dd($request->all());
         $formFields = $request->validate([
@@ -33,6 +35,7 @@ class PlaylistsController extends Controller
 
         return redirect('/playlists')->with('message', 'Song has been added successfully!');
     }
+
     public function createPlaylist(Request $request) {
         $formFields = $request->validate([
             'playlist_banner' => 'required',
@@ -50,6 +53,8 @@ class PlaylistsController extends Controller
             dd('something went wrong!');
         };
     }
+
+    
     
 
 

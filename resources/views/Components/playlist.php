@@ -5,8 +5,11 @@
 
 
     class Playlist extends Component {
+        public $playlists;
+
         public function render()
         {
-            return view('Components.playlist');
+            $playlists = $this->playlists;
+            return view('Components.playlist' , ['playlists' => $playlists]);
         }
     }

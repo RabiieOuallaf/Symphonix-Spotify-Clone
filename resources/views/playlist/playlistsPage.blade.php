@@ -15,10 +15,9 @@
         <section class="homepage w-[100%]">
             
             <div class="flex flex-col">
-
                 <x-navbar class="flex-1"/>     
                 <div class="flex justify-center items-center w-[120%]"> 
-                    <x-playlist />
+                    <x-playlist :playlists="$playlists"/>
                 </div>
                 <x-Sidebar class="flex-1"/>
                 
