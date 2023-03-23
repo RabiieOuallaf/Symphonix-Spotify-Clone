@@ -50,9 +50,8 @@
                                         <input placeholder="playlist Name" name="playlist_name"class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4" required="required" type="text" >
                                     </div>
                                 </div>
-                                <div class="md:flex flex-row md:space-x-4 w-full text-xs">
-                                    @livewire('songs-search')
-                                </div>
+                                <!-- <div class="md:flex flex-row md:space-x-4 w-full text-xs">
+                                </div> -->
 
                                 <p class="text-xs text-red-500 text-right my-3">Required fields are marked with an
                                     asterisk <abbr title="Required field">*</abbr></p>

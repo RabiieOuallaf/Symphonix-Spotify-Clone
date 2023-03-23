@@ -75,7 +75,7 @@ Route::get('/playlists', [PlaylistsController::class , 'playlistPage']);
 Route::get('/createPlaylist', [PlaylistsController::class, 'createPlaylistPage']);
 Route::get('/updateBand', [PlaylistsController::class, 'updatePlaylist']);
 
-Route::post('/playlist/create', [PlaylistsController::class, 'createPlaylistWithSongs']);
+Route::post('/playlist/create', [PlaylistsController::class, 'createPlaylist']);
 Route::post('/update/playlist/{playlist}', [PlaylistsController::class, 'updatePlaylist']);
 Route::delete('/deleteband/{playlist}', [PlaylistsController::class, 'deletePlaylist']);
 
