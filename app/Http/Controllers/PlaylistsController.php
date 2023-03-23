@@ -18,17 +18,17 @@ class PlaylistsController extends Controller
         $formFields = $request->validate([
             'playlist_banner' => 'required',
             'creator_email' => ['required', 'min:3'],
-            'playlist_name' => ['required', 'min:3']
+            'playlist_name' => ['required', 'min:3'],
+            'songs_id' => 'required'
         ]);
         $Playlist = Playlist::create($formFields);
         if($request->hasFile('playlist_banner')){
             $formFields['playlist_banner'] = $request->file('playlist_banner')->store('public/upload');
-           
+            
         }
-        $songs = Music::find(1);
+        $songs = Music::find($formFields['songs_id']);
         $Playlist->music()->attach($songs->id);
 
-        return $Playlist->load('music');
 
         return redirect('/dashbaord')->with('message', 'Song has been added successfully!');
 

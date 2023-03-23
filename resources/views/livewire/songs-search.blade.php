@@ -2,7 +2,7 @@
     <label class="font-semibold text-white py-2">add songs<abbr title="required">*</abbr></label>
     <!-- <input placeholder="Searching..." name="playlist_songs" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4" required="required" type="search" > -->
     <input type="text" wire:model="searchQuery" wire:keyup="search" placeholder="Search..."  class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4" required="required" /> 
-    <input type="text" name="playlist_songs" id="playlist_songs" class="hidden">
+    <input type="number" name="songs_id" id="playlist_songs" class="hidden">
     @if($songs && count($songs))
         <ul>
             @foreach($songs as $song)
@@ -21,6 +21,7 @@
     let songsList = [];
     const selected_songs = document.getElementById('Selected_songs');
     const playlist_songs = document.getElementById('playlist_songs');
+
     const addSongToInput = (songName, songId) => {
         // if the song already exsite in the array 
         const exsitingSong = songsList.find((song) => song.songId === songId);
@@ -31,8 +32,7 @@
             'songName' : songName,
             'songId': songId
         });
-        playlist_songs.value = JSON.stringify(songsList);
-
+        playlist_songs.value = songsList[0].songId;
         // add the selected song name to the selected_songs element
         const selectedSongElement = document.createElement('span');
         selectedSongElement.innerHTML = songName + '<span class="text-red-400" onclick="removeSong()" data-songId="`${songId}`"> X </span>' + '</br>' ;
