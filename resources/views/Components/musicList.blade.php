@@ -72,10 +72,5 @@
         })
     })
 
-    function playAudio(url) {
-        var audio = document.getElementById("song_player");
-        audio.src = url;
-        audio.play();
-    }
-    const player = new Plyr('#song_player');
+  
 </script>

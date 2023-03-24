@@ -9,8 +9,6 @@
         @vite(['resources/css/app.css'])
         <!-- fontawesome -->
         <script src="https://kit.fontawesome.com/28113ccba1.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css" />
-        <script src="https://cdn.plyr.io/3.6.2/plyr.js"></script>
     </head>
     <body class="antialiased h-[100%] overflow-hidden overflow-y-auto bg-neutral-800" >
         
