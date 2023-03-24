@@ -16,7 +16,11 @@
             
             <div class="flex flex-col">
 
-                <x-navbar class="flex-1"/>     
+                <x-navbar class="flex-1"/>  
+                    <div class="flex justify-center items-center w-[120%]"> 
+                        
+                        <x-musicList :musics="$musics" />
+                    </div>
                 
                 <x-Sidebar class="flex-1"/>
                 
