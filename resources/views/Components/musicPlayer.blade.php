@@ -112,11 +112,6 @@ progressBar.value = 0;
 
 music.forEach((ele, i) => {
     ele.addEventListener("click", () => {
-        // remove bg from all element
-        music.forEach((ele) => {
-            ele.classList.remove("bg-gray-200/20");
-        });
-
 
         // current song that clicked on
         currentSong = ele.querySelector("#audio").src;
@@ -191,12 +186,6 @@ nextBtn.addEventListener('click', () => {
     let audio = currentSong;
     handleFooter(img, title, album, audio);
 
-    // remove bg from all music tr
-    music.forEach((ele) => {
-        ele.classList.remove("bg-gray-200/20");
-    });
-    // add bg to the next element
-    music[indexOfSong].classList.add("bg-gray-200/20");
 })
 
 // next btn

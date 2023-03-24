@@ -7,9 +7,9 @@
         </div>
     </div>
 
-    <div class="playlists-container grid justify-content-center grid-cols-4 gap-x-10 w-[100%]" id="musicTable">
+    <div class="playlists-container grid justify-content-center grid-cols-4 gap-x-10 w-[100%]" id="">
         @foreach($musics as $music)
-        <div class="playlist">
+        <div class="playlist" id="musicTable">
 
             <div class="bg-gray-900 shadow-lg rounded p-3">
                 <div class="group relative">
