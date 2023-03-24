@@ -21,10 +21,13 @@
                             </svg>
                         </button>
 
-                        <button class="hover:scale-110 text-white opacity-0 transform translate-y-3 group-hover:translate-y-0 group-hover:opacity-100 transition" onclick="location.href='/playlist'">
+                        <button class="hover:scale-110 text-white opacity-0 transform translate-y-3 group-hover:translate-y-0 group-hover:opacity-100 transition" onclick="playAudio('{{ Storage::url($music->music_audio) }}')">
                             <svg xmlns="http://.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-play-circle-fill" viewBox="0 0 16 16">
                                 <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z" />
                             </svg>
+                            <audio id="song_player" controls autoplay>
+                                <source src="{{Storage::url($music->music_audio)}}" type="audio/mp3">
+                            </audio>
                         </button>
 
                         <button class="hover:scale-110 text-white opacity-0 transform translate-y-3 group-hover:translate-y-0 group-hover:opacity-100 transition" id="playlist_options">
@@ -42,7 +45,7 @@
 
                             </div>
                         </button>
-
+                        
                     </div>
                 </div>
                 <div class="p-5">
@@ -68,4 +71,11 @@
             option.lastElementChild.classList.toggle('hidden');
         })
     })
+
+    function playAudio(url) {
+        var audio = document.getElementById("song_player");
+        audio.src = url;
+        audio.play();
+    }
+    const player = new Plyr('#song_player');
 </script>
