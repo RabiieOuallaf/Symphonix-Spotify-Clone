@@ -72,8 +72,8 @@ class PlaylistsController extends Controller
             'creator_email' => ['required','min:3'],
             'playlist_name' => ['required', 'min:3'],
         ]);
-        if($request->hasFile('music_banner')){
-            $formFields['music_banner'] = $request->file('music_banner')->store('public/upload');
+        if($request->hasFile('playlist_banner')){
+            $formFields['playlist_banner'] = $request->file('playlist_banner')->store('public/upload/playlists');
            
         }
         if($playlist->update($formFields)){
@@ -83,6 +83,12 @@ class PlaylistsController extends Controller
         };
     }
 
+    // Delete playlist 
+
+    public function deletePlaylist(Playlist $playlist){
+        $playlist->delete();
+        return redirect('/playlists')->with('message', 'Playlist is deleted');
+    }
 }
 
 
