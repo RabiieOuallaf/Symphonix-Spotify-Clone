@@ -10,9 +10,9 @@
         <!-- fontawesome -->
         <script src="https://kit.fontawesome.com/28113ccba1.js" crossorigin="anonymous"></script>
     </head>
-    <body class="antialiased h-[100%] overflow-hidden overflow-y-auto bg-neutral-800" >
+    <body class="antialiased  overflow-hidden overflow-y-auto bg-neutral-800" >
         
-        <section class="homepage w-[100%]">
+        <section class="homepage w-[100%] h-[700px]">
             
             <div class="flex flex-col">
 

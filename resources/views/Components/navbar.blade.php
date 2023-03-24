@@ -1,11 +1,11 @@
-<nav class="bg-neutral-900 w-screen h-[10%] flex">
+<nav class="bg-neutral-900 w-screen flex">
 
     <span class="text-2xl text-white ml-8 flex items-center">Symphonix</span>
 
 
-    <div class="navbar-container mx-72 flex justify-center items-center">
+    <div class="navbar-container mx-64 flex justify-center items-center">
 
-        <div class="user-section mx-5 flex items-center my-1">
+        <div class="user-section mx-3 flex items-center my-1">
             <!-- user image -->
             <i class="fa-solid fa-bell text-white mx-10 text-xl"></i>
             <img src="{{ asset('images/upload/admin.jpg') }}" alt="user's picture" class="w-16 h-16 rounded-full">

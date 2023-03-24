@@ -1,11 +1,9 @@
-<section class="bg-neutral-900 w-[20%] h-[100%] absolute top-20">
-    <!-- Site logo and back button -->
+<section class="bg-neutral-900 w-[15%] h-[100%] absolute top-20">
+    <!-- Site logo -->
 
-    <div class="back-btn flex flex-col text-center">
-        <input class="btn my-10 bg-violet-600 text-white z-10 top-10 mx-5 border px-6 py-2 rounded-md hover:bg-inherit duration-200" type="submit" value="back" >
-    </div>
+    
 
-   <div class="sidebar-sections text-zinc-400 flex flex-col text-center gap-7 my-10">
+   <div class="sidebar-sections text-zinc-400 flex flex-col text-center gap-5 my-10">
 
         <!-- Home -->
         <div class="home cursor-pointer hover:text-violet-600 ease-in-out duration-200" onclick="location.href='/'">

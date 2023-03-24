@@ -51,10 +51,11 @@ Route::get('/updateMusic/{music}', [AdminsController::class, 'updateMusicPage'])
 
 Route::get('/addArtiste', [AdminsController::class, 'addAritstePage']);
 // Music routing 
-Route::get('/songs', [MusicsController::class, 'displayMusic']); //read
+Route::get('/songs', [MusicsController::class, 'displayMusicPage']); //read
 Route::post('/music/create',[MusicsController::class, 'createMusic']); // create
 Route::post('/music/update/{music}', [MusicsController::class,'updateMusic']);
-Route::delete('/deleteMusic/{music}', [MusicsController::class, 'deleteMusic']);
+Route::delete('/deleteMusic/{music}', [MusicsController::class, 'deleteMusic']); 
+Route::get('/music/{music}', [MusicsController::class, 'displayMusic']); // one song
 
 // Artiste routing 
 Route::post('/artiste/create', [ArtistesController::class, 'createArtiste']);

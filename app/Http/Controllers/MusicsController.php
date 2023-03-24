@@ -8,8 +8,12 @@ use Illuminate\Http\Request;
 class MusicsController extends Controller
 {
     // display the music page 
-    public function displayMusic() {
+    public function displayMusicPage() {
         return view('music.musicPage');
+    }
+    // Display one music page 
+    public function displayMusic(Music $music) {
+        return view('music.music' , ['music' => $music]);
     }
     // ==== ***  MUSIC CRUD *** === //
     // == Create == //

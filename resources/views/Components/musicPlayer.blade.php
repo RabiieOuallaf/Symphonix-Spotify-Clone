@@ -111,7 +111,7 @@ volumInp.value = 80;
 progressBar.value = 0;
 
 music.forEach((ele, i) => {
-    ele.addEventListener("click", () => {
+    ele.addEventListener("dblclick", () => {
 
         // current song that clicked on
         currentSong = ele.querySelector("#audio").src;
