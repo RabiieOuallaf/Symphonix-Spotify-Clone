@@ -18,7 +18,8 @@ class Music extends Model
         'creating_date',
         'layrics_writer', 
         'brand_artiste_website',
-        'music_banner'
+        'music_banner',
+        'music_audio'
         
     ];
     //Define the relationship between classes 

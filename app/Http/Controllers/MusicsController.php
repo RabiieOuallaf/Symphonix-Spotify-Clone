@@ -21,11 +21,14 @@ class MusicsController extends Controller
             'brand_artiste_website' => ['required', 'min:3'],
             'artist_name' => ['required','min:3'],
             'creating_date' => ['required', 'min:3'],
-            'music_banner' => 'required'
+            'music_banner' => 'required',
+            'music_audio' => 'required'
         ]);
         if($request->hasFile('music_banner')){
             $formFields['music_banner'] = $request->file('music_banner')->store('public/upload');
-           
+        }
+        if($request->hasFile('music_audio')){
+            $formFields['music_audio'] = $request->file('music_audio')->storeAs('audio', 'public/upload/audio');
         }
         if(Music::create($formFields)){
             return redirect('/dashbaord')->with('message', 'Song has been added successfully!');

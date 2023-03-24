@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('song_langauge');
             $table->string('creating_date');
             $table->string('music_banner');
+            $table->string('music_audio');
             $table->string('layrics_writer');
             $table->string('brand_artiste_website');
             $table->timestamps();
