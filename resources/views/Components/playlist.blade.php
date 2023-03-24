@@ -38,7 +38,7 @@
                                     <form action="/deletePlaylist/{{$playlist->id}}" method="POST">
                                         @csrf
                                         @method('DELETE')
-                                        <input type="submit" class="text-red-800" value="delete"/>
+                                        <input type="submit" class="text-md text-red-600 font-semibold hover:text-red-700 duration-300" value="delete"/>
                                     </form>
 
                             </div>
