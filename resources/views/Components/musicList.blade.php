@@ -36,7 +36,7 @@
                             </svg>
                             <div class="dropdown hidden" id="dropdown">
     
-                                    <a href="/addToPlaylist" class="text-md text-yellow-500 font-semibold hover:text-yellow-700 duration-300">Update</a>
+                                    <a href="/addToPlaylist/{{$music->id}}" class="text-md text-yellow-500 font-semibold hover:text-yellow-700 duration-300">Update</a>
                                     
 
                             </div>

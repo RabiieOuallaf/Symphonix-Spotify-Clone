@@ -27,20 +27,15 @@ class PlaylistsController extends Controller
     // create a playlist with song (insert the data to the pivot table musics_playlists)
 
     public function createPlaylistWithSongs(Request $request) {
-        dd($request->all());
         $formFields = $request->validate([
-            'playlist_banner' => 'required',
-            'creator_email' => ['required', 'min:3'],
-            'playlist_name' => ['required', 'min:3'],
-            'songs_id' => 'required|array|min:1'
+            'creator_email' => 'required',
+            'playlist_id' => 'required',
+            'song_id' => 'required'
         ]);
-        $Playlist = Playlist::create($formFields);
-        if($request->hasFile('playlist_banner')){
-            $formFields['playlist_banner'] = $request->file('playlist_banner')->store('public/upload');
-            
-        }
-        $songs = Music::find($formFields['songs_id']);
-        $Playlist->music()->attach($songs->id);
+        
+        $Playlist = Playlist::find($formFields['playlist_id']);
+        $song = Music::find($formFields['song_id']);
+        $Playlist->music()->attach($song->id);
 
 
         return redirect('/playlists')->with('message', 'Song has been added successfully!');

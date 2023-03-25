@@ -35,8 +35,9 @@
                                 
                                 <div class="md:flex md:flex-row md:space-x-4 w-full text-xs">
                                     <div class="w-full flex flex-col mb-3">
-                                        <label class="font-semibold text-white py-2">playlist name<abbr title="required">*</abbr></label>
-                                        <input placeholder="playlist Name" name="playlist_name"class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4" required="required" type="text" >
+                                        <label class="font-semibold text-white py-2">Song name<abbr title="required">*</abbr></label>
+                                        <input placeholder="song name" name="song_name" value="{{$music->song_name}}" readonly class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4" required="required" type="text" >
+                                        <input type="number" class="hidden" name="song_id" value="{{$music->id}}">
                                     </div>
                                 </div>
                                 <div class="md:flex flex-row md:space-x-4 w-full text-xs">
