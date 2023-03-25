@@ -1,4 +1,4 @@
-<section class="bg-neutral-900 w-[15%] h-[100%] absolute top-20">
+<section class="bg-neutral-900 w-[15%] h-[125%] absolute top-20">
     <!-- Site logo -->
 
     

@@ -13,7 +13,7 @@ class MusicsController extends Controller
     }
     // Display one music  
     public function displayMusic(Music $music) {
-        return view('music.music' , ['music' => $music]);
+        return view('music.music' ,['music' => $music]);
     }
 
     // load add to playlist page
