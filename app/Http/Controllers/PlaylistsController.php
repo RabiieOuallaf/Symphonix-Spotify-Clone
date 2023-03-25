@@ -15,8 +15,9 @@ class PlaylistsController extends Controller
     }
 
     // load playlist page 
-    public function playlistPage() {
-        return view('playlist.playlist');
+    public function playlistPage(Playlist $playlist) {
+        $playlistWithSongs = $playlist->music;
+        return view('playlist.playlist', ['playlists' => $playlist, 'songs' => $playlistWithSongs]);
     }
     // Load the create/add playlist page 
     public function createPlaylistPage() {

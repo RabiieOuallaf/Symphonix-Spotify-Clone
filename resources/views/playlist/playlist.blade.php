@@ -20,9 +20,10 @@
             <x-navbar />
             <x-sidebar />
             <div class="w-full overflow-x-auto">
+                
                 <table class="w-[85%] absolute right-0">
                     <thead>
-                        <tr class="text-sm font-semibold tracking-wide text-left text-white bg-purple-800 uppercase border-b border-gray-600">
+                        <tr class="text-sm font-semibold tracking-wide text-left text-white bg-purple-700 uppercase">
                             <th class="px-2 py-3">song name</th>
                             <th class="px-2 py-3">artiste</th>
                             <th class="px-2 py-3">realsed date</th>
@@ -32,6 +33,7 @@
                     <tbody class="bg-neutral-800">
                         <tr class="text-white">
                             <td class="px-2 py-3 border">
+                                
                                 <div class="flex items-center text-sm">
                                     <div class="relative w-28 h-28 mr-3 rounded-full md:block">
                                         <img class="object-cover w-full h-full rounded-md" src="https://images.pexels.com/photos/5212324/pexels-photo-5212324.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" alt="" loading="lazy" />
