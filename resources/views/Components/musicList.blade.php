@@ -1,8 +1,8 @@
-<section class="playlists w-[70%] ">
+<section class="playlists w-[55%] ">
 
     
 
-    <div class="playlists-container grid justify-content-center grid-cols-4 gap-x-10 w-[100%] my-5" id="">
+    <div class="playlists-container grid justify-content-center grid-cols-4 gap-x-10 w-[95%] my-5" id="">
         @foreach($musics as $music)
         <div class="playlist" id="musicTable">
 

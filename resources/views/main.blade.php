@@ -12,7 +12,7 @@
     </head>
     <body class="antialiased  overflow-hidden overflow-y-auto bg-neutral-800" >
         
-        <section class="homepage w-[100%] h-[700px]">
+        <section class="homepage w-[100%] h-[1000px]">
             
             <div class="flex flex-col">
 

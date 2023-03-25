@@ -110,11 +110,16 @@ let currentDuration = 0;
 volumInp.value = 80;
 progressBar.value = 0;
 
-music.forEach((ele, i) => {
-    ele.addEventListener("dblclick", () => {
 
+
+music.forEach((ele, i) => {
+   
+    ele.addEventListener("dblclick", () => {
         // current song that clicked on
+
         currentSong = ele.querySelector("#audio").src;
+        
+
         // current song index
         indexOfSong = i;
         // show footer bar
@@ -127,7 +132,6 @@ music.forEach((ele, i) => {
 
         // play music on the footer bar
         footerMusic.play();
-        console.log(footerMusic.currentTime);
         // give the footer current volume
         footerMusic.volume = volumInp.value / 100;
 
@@ -158,6 +162,9 @@ function updateProgress(time) {
 
 // play music 
 playBtn.addEventListener("click", () => {
+    currentSong = document.getElementById('audio').src;
+
+    footerMusic.src = currentSong
     footerMusic.play();
     playBtn.classList.add("hidden");
     pauseBtn.classList.remove("hidden");
@@ -185,6 +192,12 @@ nextBtn.addEventListener('click', () => {
     let album = music[indexOfSong].querySelector("#artiste").textContent;
     let audio = currentSong;
     handleFooter(img, title, album, audio);
+    // remove bg from all music tr
+    music.forEach((ele) => {
+        ele.classList.remove("bg-gray-200/20");
+    });
+    // add bg to the next element
+    music[indexOfSong].classList.add("bg-gray-200/20");
 
 })
 

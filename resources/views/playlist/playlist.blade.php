@@ -32,27 +32,30 @@
                     </thead>
                     <tbody class="bg-neutral-800">
                         @foreach($songs as $song) 
-                       
-                        <tr class="text-white">
-                            <td class="px-2 py-3 border">
+                        
+                        <tr class="text-white cursor-pointer" id="musicTable">
                             
+                            <td class="px-2 py-3 border">
+                            <audio id="song_player" controls  class="hidden">
+                                <source src="{{Storage::url($song->music_audio)}}" id="audio" type="audio/mp3">
+                            </audio>
                                     <div class="flex items-center text-sm">
                                         <div class="relative w-28 h-28 mr-3 rounded-full md:block">
-                                            <img class="object-cover w-full h-full rounded-md" src="{{ Storage::url($song->music_banner) }}" alt="" loading="lazy" />
+                                            <img class="object-cover w-full h-full rounded-full border-2 border-violet-800" id="musicImg" src="{{ Storage::url($song->music_banner) }}" alt="" loading="lazy" />
                                             <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
                                         </div>
                                         <div>
-                                            <p class="font-semibold text-white">{{$song->song_name}}</p>
+                                            <p class="font-semibold text-white" id="title">{{$song->song_name}}</p>
                                         </div>
                                     </div>
                                 </td>
-                                <td class="px-2 py-3 text-ms font-semibold border">{{$song->artist_name}}
+                                <td class="px-2 py-3 text-ms font-semibold border" id="artiste">{{$song->artist_name}}
                                 
                                 </td>
                                 <td class="px-2 py-3 text-xs border">
-                                    <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-sm"> Acceptable </span>
+                                    <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-sm"> {{ $song->creating_date }} </span>
                                 </td>
-                                <td class="px-2 py-3 text-sm border">{{ $song->creating_date }}</td>
+                                <td class="px-2 py-3 text-sm border"></td>
                             </tr>
                             @endforeach
 
