@@ -15,6 +15,12 @@ class MusicsController extends Controller
     public function displayMusic(Music $music) {
         return view('music.music' , ['music' => $music]);
     }
+
+    // load add to playlist page
+    
+    public function addToPlaylistPage() {
+        return view('music.addToPlaylist');
+    }
     // ==== ***  MUSIC CRUD *** === //
     // == Create == //
     public function createMusic(Request $request) {

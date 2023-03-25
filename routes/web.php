@@ -56,6 +56,7 @@ Route::post('/music/create',[MusicsController::class, 'createMusic']); // create
 Route::post('/music/update/{music}', [MusicsController::class,'updateMusic']);
 Route::delete('/deleteMusic/{music}', [MusicsController::class, 'deleteMusic']); 
 Route::get('/music/{music}', [MusicsController::class, 'displayMusic']); // one song
+Route::get('/addToPlaylist', [MusicsController::class, 'addToPlaylistPage']); // load the add to playlist page 
 
 // Artiste routing 
 Route::post('/artiste/create', [ArtistesController::class, 'createArtiste']);
@@ -79,6 +80,7 @@ Route::get('/updatePlaylist/{playlist}', [PlaylistsController::class, 'updatePla
 Route::post('/playlist/create', [PlaylistsController::class, 'createPlaylist']);
 Route::post('/playlist/update/{playlist}', [PlaylistsController::class, 'updatePlaylist']);
 Route::delete('/deletePlaylist/{playlist}', [PlaylistsController::class, 'deletePlaylist']);
+Route::post('/musicToplaylist', [PlaylistsController::class , 'createPlaylistWithSongs']);
 
 // == Songs searching routes == //
 
