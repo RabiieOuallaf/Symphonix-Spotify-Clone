@@ -9,6 +9,7 @@ use app\Http\Controllers\Musics;
 use app\Http\Controllers\Clients;
 use app\Http\Controllers\Artists;
 use App\Http\Controllers\BandsController;
+use App\Http\Controllers\CommentsController;
 use App\Http\Controllers\MusicsController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\PlaylistsController;
@@ -82,6 +83,9 @@ Route::post('/playlist/create', [PlaylistsController::class, 'createPlaylist']);
 Route::post('/playlist/update/{playlist}', [PlaylistsController::class, 'updatePlaylist']);
 Route::delete('/deletePlaylist/{playlist}', [PlaylistsController::class, 'deletePlaylist']);
 Route::post('/musicToplaylist', [PlaylistsController::class , 'createPlaylistWithSongs']);
+
+// Comments routes 
+Route::post('/addComment', [CommentsController::class, 'addComment']);
 
 // == Songs searching routes == //
 

@@ -15,6 +15,6 @@ class Playlist extends Model
     ];
      //Define the relationship between classes 
      public function music() {
-        return $this->belongsToMany(music::class);
+        return $this->belongsToMany(Music::class);
     }
 }

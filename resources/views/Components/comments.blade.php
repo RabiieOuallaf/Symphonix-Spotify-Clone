@@ -28,10 +28,14 @@
         </svg>
       </div>
     </div>
-    <textarea placeholder="Add your comment..." class="p-2 focus:outline-1 focus:outline-blue-500 font-bold border-[0.1px] resize-none h-[120px] border-[#9EA5B1] rounded-md w-[60vw]"></textarea>
-    <div class="flex justify-end">
-      <button class="text-sm font-semibold absolute bg-[#4F46E5] w-fit text-white py-2 rounded px-3">Post</button>
-    </div>
+    <form action="/addComment" method="POST">
+        @csrf
+        <input type="text" class="hidden" name="comment_creator" value="{{ auth()->user()->email }}">
+        <textarea placeholder="Add your comment..." name="comment" class="p-2 focus:outline-1 focus:outline-purple-500 font-bold border-[0.1px] resize-none h-[120px] border-[#9EA5B1] rounded-md w-[60vw]"></textarea>
+        <div class="flex justify-end">
+          <button class="text-sm font-semibold absolute bg-purple-500 w-fit text-white py-2 rounded px-3">Post</button>
+        </div>
+    </form>
   </div>
 </div>
 </body>
