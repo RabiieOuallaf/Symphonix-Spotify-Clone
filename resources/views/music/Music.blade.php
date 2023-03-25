@@ -69,6 +69,13 @@
 
             
         </div>
+        <div class="flex justify-center items-center">
+            @foreach($comments as $comment)
+                
+                {{$comment->comment}}
+
+            @endforeach
+        </div>
         <x-comments />
         <x-Sidebar class="flex-1" />
 

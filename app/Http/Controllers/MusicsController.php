@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
 use App\Models\Music;
 use Illuminate\Http\Request;
 
@@ -13,7 +14,8 @@ class MusicsController extends Controller
     }
     // Display one music  
     public function displayMusic(Music $music) {
-        return view('music.music' ,['music' => $music]);
+        $comments = Comment::all();
+        return view('music.music' ,['music' => $music], ['comments' => $comments]);
     }
 
     // load add to playlist page
@@ -21,7 +23,9 @@ class MusicsController extends Controller
     public function addToPlaylistPage(Music $music) {
         return view('music.addToPlaylist', ['music' => $music]);
     }
+
     // ==== ***  MUSIC CRUD *** === //
+
     // == Create == //
     public function createMusic(Request $request) {
         $formFields = $request->validate([

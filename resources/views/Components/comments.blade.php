@@ -28,6 +28,9 @@
         </svg>
       </div>
     </div>
+    <div>
+        
+    </div>
     <form action="/addComment" method="POST">
         @csrf
         <input type="text" class="hidden" name="comment_creator" value="{{ auth()->user()->email }}">
