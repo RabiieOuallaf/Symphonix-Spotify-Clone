@@ -25,18 +25,14 @@
                             </audio>
                         </button>
 
-                        <button class="hover:scale-110 text-white opacity-0 transform translate-y-3 group-hover:translate-y-0 group-hover:opacity-100 transition" onclick="location.href='/music/{{$music->id}}'">
+                        <button id="playlist_options" class="hover:scale-110 text-white opacity-0 transform translate-y-3 group-hover:translate-y-0 group-hover:opacity-100 transition">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
                                 <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
                             </svg>
                             <div class="dropdown hidden" id="dropdown">
     
-                                    <a href="/updatePlaylist/" class="text-md text-yellow-500 font-semibold hover:text-yellow-700 duration-300">Update</a>
-                                    <form action="/deletePlaylist/" method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                        <input type="submit" class="text-md text-red-600 font-semibold hover:text-red-700 duration-300" value="delete"/>
-                                    </form>
+                                    <a href="/addToPlaylist/{{$music->id}}" class="text-md text-yellow-500 font-semibold hover:text-yellow-700 duration-300">Update</a>
+                                   
 
                             </div>
                         </button>

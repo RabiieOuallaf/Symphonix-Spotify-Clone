@@ -11,7 +11,7 @@ class MusicsController extends Controller
     public function displayMusicPage() {
         return view('music.musicPage');
     }
-    // Display one music page 
+    // Display one music  
     public function displayMusic(Music $music) {
         return view('music.music' , ['music' => $music]);
     }
