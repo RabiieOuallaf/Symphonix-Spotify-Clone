@@ -8,10 +8,15 @@ use Illuminate\Http\Request;
 
 class PlaylistsController extends Controller
 {
-    // Load the playlist page 
-    public function playlistPage(Playlist $playlist) {
+    // Load the playlists page 
+    public function playlistsPage(Playlist $playlist) {
         $Playlist = $playlist::all();
         return view('playlist.playlistsPage', ['playlists' => $Playlist]);
+    }
+
+    // load playlist page 
+    public function playlistPage() {
+        return view('playlist.playlist');
     }
     // Load the create/add playlist page 
     public function createPlaylistPage() {

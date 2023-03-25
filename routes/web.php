@@ -72,7 +72,8 @@ Route::post('/update/band/{band}', [BandsController::class, 'updateBand']); // u
 Route::delete('/deleteband/{band}', [BandsController::class, 'deleteband']);
 
 // Playlist Routing 
-Route::get('/playlists', [PlaylistsController::class , 'playlistPage']);
+Route::get('/playlists', [PlaylistsController::class , 'playlistsPage']);
+Route::get('/playlist', [PlaylistsController::class, 'playlistPage']);
 
 Route::get('/createPlaylist', [PlaylistsController::class, 'createPlaylistPage']);
 Route::get('/updatePlaylist/{playlist}', [PlaylistsController::class, 'updatePlaylistPage']);
