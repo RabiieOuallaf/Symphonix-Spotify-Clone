@@ -1,17 +1,12 @@
-<section class="playlists w-[50%] ">
+<section class="playlists w-[70%] ">
 
-    <div class="header-section flex w-[100%] justify-between items-center">
-        <h2 class="text-3xl font-semibold text-white my-5" style="margin-left: -5rem;">Your playlists : </h2>
-        <div class="text-white text-4xl duration-300 cursor-pointer" style="border: white 1px solid; border-radius: 100%; width:34px; height:34px" onclick="location.href='/createPlaylist'">
-            <span class="text-purple-800 absolute font-bold hover:text-white duration-300" style="top:94px;right:130px">+</span>
-        </div>
-    </div>
+    
 
-    <div class="playlists-container grid justify-content-center grid-cols-4 gap-x-10 w-[100%]" id="">
+    <div class="playlists-container grid justify-content-center grid-cols-4 gap-x-10 w-[100%] my-5" id="">
         @foreach($musics as $music)
         <div class="playlist" id="musicTable">
 
-            <div class="bg-gray-900 shadow-lg rounded p-3">
+            <div class="bg-purple-800 shadow-lg rounded p-1">
                 <div class="group relative">
                     <img class="w-full md:w-72 block rounded" src="{{ Storage::url($music->music_banner) }}" alt="song banner" id="musicImg"/>
                     <div class="absolute bg-black rounded bg-opacity-0 group-hover:bg-opacity-60 w-full h-full top-0 flex items-center group-hover:opacity-100 transition justify-evenly">
@@ -30,21 +25,25 @@
                             </audio>
                         </button>
 
-                        <button class="hover:scale-110 text-white opacity-0 transform translate-y-3 group-hover:translate-y-0 group-hover:opacity-100 transition" id="playlist_options">
+                        <button class="hover:scale-110 text-white opacity-0 transform translate-y-3 group-hover:translate-y-0 group-hover:opacity-100 transition" onclick="location.href='/music/{{$music->id}}'">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
                                 <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
                             </svg>
                             <div class="dropdown hidden" id="dropdown">
     
-                                    <a href="/addToPlaylist/{{$music->id}}" class="text-md text-yellow-500 font-semibold hover:text-yellow-700 duration-300">Update</a>
-                                    
+                                    <a href="/updatePlaylist/" class="text-md text-yellow-500 font-semibold hover:text-yellow-700 duration-300">Update</a>
+                                    <form action="/deletePlaylist/" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <input type="submit" class="text-md text-red-600 font-semibold hover:text-red-700 duration-300" value="delete"/>
+                                    </form>
 
                             </div>
                         </button>
                         
                     </div>
                 </div>
-                <div class="p-5">
+                <div class="p-2 text-center">
                     <h3 class="text-white text-xl" id="title">{{ $music->song_name }}</h3>
                     <p class="text-gray-400 text-sm " id="artiste"> {{ $music->artiste_name }} </p>
                 </div>

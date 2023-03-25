@@ -31,26 +31,30 @@
                         </tr>
                     </thead>
                     <tbody class="bg-neutral-800">
+                        @foreach($songs as $song) 
+                       
                         <tr class="text-white">
                             <td class="px-2 py-3 border">
+                            
+                                    <div class="flex items-center text-sm">
+                                        <div class="relative w-28 h-28 mr-3 rounded-full md:block">
+                                            <img class="object-cover w-full h-full rounded-md" src="{{ Storage::url($song->music_banner) }}" alt="" loading="lazy" />
+                                            <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
+                                        </div>
+                                        <div>
+                                            <p class="font-semibold text-white">{{$song->song_name}}</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-2 py-3 text-ms font-semibold border">{{$song->artist_name}}
                                 
-                                <div class="flex items-center text-sm">
-                                    <div class="relative w-28 h-28 mr-3 rounded-full md:block">
-                                        <img class="object-cover w-full h-full rounded-md" src="https://images.pexels.com/photos/5212324/pexels-photo-5212324.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" alt="" loading="lazy" />
-                                        <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
-                                    </div>
-                                    <div>
-                                        <p class="font-semibold text-white">Sufyan</p>
-                                        <p class="text-xs text-white">Developer</p>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="px-2 py-3 text-ms font-semibold border">22</td>
-                            <td class="px-2 py-3 text-xs border">
-                                <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-sm"> Acceptable </span>
-                            </td>
-                            <td class="px-2 py-3 text-sm border">6/2/2000</td>
-                        </tr>
+                                </td>
+                                <td class="px-2 py-3 text-xs border">
+                                    <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-sm"> Acceptable </span>
+                                </td>
+                                <td class="px-2 py-3 text-sm border">{{ $song->creating_date }}</td>
+                            </tr>
+                            @endforeach
 
                     </tbody>
                 </table>
