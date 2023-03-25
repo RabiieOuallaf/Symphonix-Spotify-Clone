@@ -69,12 +69,32 @@
 
             
         </div>
-        <div class="flex justify-center items-center">
-            @foreach($comments as $comment)
-                
-                {{$comment->comment}}
+        <div class="">
+            
+            <div class="antialiased mx-auto max-w-screen-sm">
+                <h3 class="mb-4 text-lg font-semibold text-white">Comments</h3>
+                @foreach($comments as $comment)
 
-            @endforeach
+                <div class="space-y-4 my-5">
+
+                    <div class="flex">
+                    
+                        <div class="flex-1 border rounded-lg px-4 py-2 sm:px-6 sm:py-4 leading-relaxed">
+                            <strong class="text-md text-white font-semibold">{{ $comment->comment_creator }}</strong> <span class="text-xs mx-2 text-white">{{$comment->created_at}}</span>
+                            <p class="text-sm text-white">
+                                {{$comment->comment}}
+                            </p>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                @endforeach
+            </div>
+
+                    
+                
+
         </div>
         <x-comments />
         <x-Sidebar class="flex-1" />
