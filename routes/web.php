@@ -86,6 +86,8 @@ Route::post('/musicToplaylist', [PlaylistsController::class , 'createPlaylistWit
 
 // Comments routes 
 Route::post('/addComment', [CommentsController::class, 'addComment']);
+Route::get('/dashbaordComment', [AdminsController::class, 'dashbaordComment']);
+Route::delete('/deleteComment/{comment}', [CommentsController::class, 'deleteComment']);
 
 // == Songs searching routes == //
 

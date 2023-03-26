@@ -19,12 +19,10 @@ class CommentsController extends Controller
             return redirect('/');
         };
     }
-
     // Delte comment 
-
     public function deleteComment(Comment $comment) {
         $comment->delete();
-        return redirect('/commentDashbaord')->with('comment deleted !');
+        return redirect('/dashbaordComment')->with('comment deleted !');
     }   
     
     

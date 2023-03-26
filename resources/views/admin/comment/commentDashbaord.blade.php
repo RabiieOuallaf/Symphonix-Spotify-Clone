@@ -149,9 +149,7 @@
                                             </th>
 
                                         
-                                            <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-white uppercase text-gray-400">
-                                                Music banner
-                                            </th>
+                                            
 
                                             <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-white uppercase text-gray-400">
                                                 Actions
@@ -162,19 +160,16 @@
 
                                     <tbody class="divide-y divide-gray-200 bg-gray-800 divide-gray-700">
 
-                                        @foreach ($musics as $music)
+                                        @foreach ($comments as $comment)
                                         <tr class="hover:bg-gray-700">
-                                                <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$music->id}}</td>
-                                                <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$music->song_name}}</td>
-                                                <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$music->artist_name}}</td>
-                                                <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$music->layrics_writer}}</td>
-                                                <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                                    <img src="{{ Storage::url($music->music_banner) }}" alt="song cover">
-                                                </td>
+                                                <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$comment->id}}</td>
+                                                <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$comment->comment_creator}}</td>
+                                                <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$comment->comment}}</td>
+                                                <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$comment->created_at}}</td>
+                                                
                                                 
                                                 <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white flex gap-2">
-                                                    <button onclick="location.href='/updateMusic/{{$music->id}}'" class="text-yellow-600">update</button>
-                                                    <form action="/deleteMusic/{{$music->id}}" method="POST">
+                                                    <form action="/deleteComment/{{$comment->id}}" method="POST">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="submit"class="text-red-800">delete</button>

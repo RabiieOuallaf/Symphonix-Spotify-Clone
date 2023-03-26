@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Music;
 use App\Models\Artiste;
 use App\Models\Band;
-
+use App\Models\Comment;
 use Illuminate\Http\Request;
 
 class AdminsController extends Controller
@@ -52,5 +52,12 @@ class AdminsController extends Controller
     }
     public function updateBandPage(Band $band) {
         return view('admin.band.updateBand', ['band' => $band]);
+    }
+
+    // === Comments === //
+
+    public function dashbaordComment() {
+        $comments = Comment::all();
+        return view('admin.comment.commentDashbaord', ['comments' => $comments]);
     }
 }
