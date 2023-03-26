@@ -14,8 +14,7 @@ class MusicsController extends Controller
     }
     // Display one music  
     public function displayMusic(Music $music) {
-        $comments = Comment::all();
-        return view('music.music' ,['music' => $music], ['comments' => $comments]);
+        return view('music.music' ,['music' => $music], ['comments' => $music->comments]);
     }
 
     // load add to playlist page

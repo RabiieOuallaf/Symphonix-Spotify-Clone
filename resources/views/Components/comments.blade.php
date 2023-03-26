@@ -34,7 +34,7 @@
     <form action="/addComment" method="POST">
         @csrf
         <input type="text" class="hidden" name="comment_creator" value="{{ auth()->user()->email }}">
-        <input type="text" class="hidden" name="music_id" value="{{$mudic->id}}">
+        <input type="text" class="hidden" name="music_id" value="{{$music->id}}">
         <textarea placeholder="Add your comment..." name="comment" class="p-2 focus:outline-1 focus:outline-purple-500 font-bold border-[0.1px] resize-none h-[120px] border-[#9EA5B1] rounded-md w-[60vw]"></textarea>
         <div class="flex justify-end">
           <button class="text-sm font-semibold absolute bg-purple-500 w-fit text-white py-2 rounded px-3">Post</button>
