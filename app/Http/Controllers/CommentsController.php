@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 
 class CommentsController extends Controller
 {
-
+    // === Comments crud === //
+    // Create
     public function addComment(Request $request) {
         $formFields = $request->validate([
             'comment' => ['required', 'min:3'],
@@ -18,5 +19,13 @@ class CommentsController extends Controller
             return redirect('/');
         };
     }
+
+    // Delte comment 
+
+    public function deleteComment(Comment $comment) {
+        $comment->delete();
+        return redirect('/commentDashbaord')->with('comment deleted !');
+    }   
+    
     
 }
