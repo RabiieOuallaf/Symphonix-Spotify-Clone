@@ -96,7 +96,7 @@
                 
 
         </div>
-        <x-comments />
+        <x-comments :music="$music" />
         <x-Sidebar class="flex-1" />
 
 

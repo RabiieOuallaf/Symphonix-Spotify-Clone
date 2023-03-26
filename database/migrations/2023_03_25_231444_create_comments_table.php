@@ -17,6 +17,8 @@ return new class extends Migration
             $table->id();
             $table->longText('comment');
             $table->string('comment_creator');
+            $table->unsignedBigInteger('music_id');
+            $table->foreign('music_id')->references('id')->on('music');
             $table->foreign('comment_creator')->references('email')->on('users');
             $table->timestamps();
         });

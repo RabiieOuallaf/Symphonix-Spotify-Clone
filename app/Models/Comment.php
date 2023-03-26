@@ -11,10 +11,14 @@ class Comment extends Model
 
     protected $fillable = [
         'comment',
-        'comment_creator'
+        'comment_creator',
+        'music_id'
     ];
 
     public function users() {
         return $this->belongsTo(User::class);
+    }
+    public function musics() {
+        return $this->belongsTo(Music::class);
     }
 }
