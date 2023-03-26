@@ -70,6 +70,13 @@
             
         </div>
         <div class="">
+        <form action="/music/like" method="post">
+            @csrf 
+            <input type="text" name="user_id" value=1>
+            <input type="text" name="music_id" value=2>
+            <input type="submit">
+        </form>
+
             
             <div class="antialiased mx-auto max-w-screen-sm">
                 <h3 class="mb-4 text-lg font-semibold text-white">Comments</h3>

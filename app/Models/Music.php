@@ -29,4 +29,15 @@ class Music extends Model
     public function comments() {
         return $this->hasMany(Comment::class);
     }
+    public function likes()
+    {
+        return $this->hasMany(Likes::class);
+    }
+    public function getLikeCount()
+    {
+        return $this->likes->count();
+    }
+   
+
+
 }

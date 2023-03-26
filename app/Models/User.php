@@ -45,4 +45,16 @@ class User extends Authenticatable
     public function comments() {
         return $this->hasMany(Comment::class);
     }
+    public function likes()
+    {
+        return $this->hasMany(Likes::class);
+    }
+    public function hasLikedSong($song)
+    {
+        return $this->likes()->where('music_id', $song)->exists();
+    }
+    
+
+
+
 }
