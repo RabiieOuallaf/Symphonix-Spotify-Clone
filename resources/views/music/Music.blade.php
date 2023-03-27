@@ -10,6 +10,7 @@
     @vite(['resources/css/app.css'])
     <!-- fontawesome -->
     <script src="https://kit.fontawesome.com/28113ccba1.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body class="antialiased  overflow-hidden overflow-y-auto bg-neutral-800">
@@ -20,11 +21,20 @@
 
             <x-navbar class="flex-1" />
             <div class="flex justify-center items-center w-[120%]">
+
                 <<div class="playlist w-[75%]" id="musicTable">
 
+
                     <div class="bg-neutral-700 shadow-lg rounded p-1 flex gap-5">
+
+                        <form action="/music/like" method="post" class="absolute">
+                            <button><i class="fa-solid fa-heart text-white mx-2 text-4xl absolute cursor-pointer"></i></button>
+                            @csrf
+                            <input type="hidden" name="user_id" value=1>
+                            <input type="hidden" name="music_id" value=2>
+                        </form>
+                        <img class="w-full md:w-80 block rounded" src="{{ Storage::url($music->music_banner) }}" alt="song banner" id="musicImg" />
                         <div class="group relative">
-                            <img class="w-full md:w-80 block rounded" src="{{ Storage::url($music->music_banner) }}" alt="song banner" id="musicImg" />
                             <div class="absolute bg-black rounded bg-opacity-0 group-hover:bg-opacity-60 w-full h-full top-0 flex items-center group-hover:opacity-100 transition justify-evenly">
                                 <button class="hover:scale-110 text-white opacity-0 transform translate-y-3 group-hover:translate-y-0 group-hover:opacity-100 transition" onclick="location.href='/music/{{$music->id}}'">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
@@ -67,17 +77,12 @@
 
             </div>
 
-            
+
         </div>
         <div class="">
-        <form action="/music/like" method="post">
-            @csrf 
-            <input type="text" name="user_id" value=1>
-            <input type="text" name="music_id" value=2>
-            <input type="submit">
-        </form>
 
-            
+
+
             <div class="antialiased mx-auto max-w-screen-sm">
                 <h3 class="mb-4 text-lg font-semibold text-white">Comments</h3>
                 @foreach($comments as $comment)
@@ -85,13 +90,13 @@
                 <div class="space-y-4 my-5">
 
                     <div class="flex">
-                    
+
                         <div class="flex-1 border rounded-lg px-4 py-2 sm:px-6 sm:py-4 leading-relaxed">
                             <strong class="text-md text-white font-semibold">{{ $comment->comment_creator }}</strong> <span class="text-xs mx-2 text-white">{{$comment->created_at}}</span>
                             <p class="text-sm text-white">
                                 {{$comment->comment}}
                             </p>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -99,8 +104,8 @@
                 @endforeach
             </div>
 
-                    
-                
+
+
 
         </div>
         <x-comments :music="$music" />

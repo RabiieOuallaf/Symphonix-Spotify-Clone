@@ -9,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="h-screen overflow-hidden flex items-center justify-center">
+<body class="h-[100%] flex items-center justify-center">
     <div class="relative w-full flex items-center justify-center bg-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 bg-gray-500 bg-no-repeat bg-cover relative items-center" style="background-image: url(https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80); background-size:cover;">
         <div class="absolute bg-black opacity-60 inset-0 z-0"></div>
         <div class="max-w-2xl w-full space-y-8 p-10 bg-neutral-900  rounded-xl shadow-lg z-10">
@@ -79,12 +79,7 @@
                                     </div>
                                     <div class="w-full flex flex-col mb-3">
                                         <label class="font-semibold text-white py-2">brand/artiste<abbr title="required">*</abbr></label>
-                                        <select class="block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4 md:w-full " required="required" name="artist_name"">
-                                            <option value="brand1">Seleted brand/artiste</option>
-                                            <option value="brand2">Cochin,KL</option>
-                                            <option value="brand3">Mumbai,MH</option>
-                                            <option value="brand4">Bangalore,KA</option>
-                                        </select>
+                                        <input placeholder="artiste/band" name="artist_name" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4" type="text">
                                         <p class="text-sm text-red-500 hidden mt-3" id="error">Please fill out this field.</p>
                                     </div>
                                 </div>

@@ -13,12 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('bands', function (Blueprint $table) {
+        Schema::create('memebers', function (Blueprint $table) {
             $table->id();
-            $table->string('band_name');
-            $table->string('band_banner');
-            $table->string('band_creating_date');
-            $table->string('band_country');
+            $table->string("memebers");
             $table->timestamps();
         });
     }
@@ -30,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bands');
+        Schema::dropIfExists('memebers');
     }
 };

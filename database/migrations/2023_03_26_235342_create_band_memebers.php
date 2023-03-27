@@ -13,13 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('bands', function (Blueprint $table) {
+        Schema::create('band_memebers', function (Blueprint $table) {
             $table->id();
-            $table->string('band_name');
-            $table->string('band_banner');
-            $table->string('band_creating_date');
-            $table->string('band_country');
+            $table->unsignedBigInteger('band_id');
+            $table->unsignedBigInteger('member_id');
             $table->timestamps();
+
+            $table->foreign('band_id')->references('id')->on('band')->onDelete('cascade');
+            $table->foreign('member_id')->references('id')->on('members')->onDelete('cascade');
         });
     }
 
@@ -30,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bands');
+        Schema::dropIfExists('band_memebers');
     }
 };

@@ -60,4 +60,5 @@ class AdminsController extends Controller
         $comments = Comment::all();
         return view('admin.comment.commentDashbaord', ['comments' => $comments]);
     }
+    
 }

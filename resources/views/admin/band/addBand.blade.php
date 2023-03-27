@@ -62,16 +62,16 @@
                                 </div>
                                 <div class="md:flex md:flex-row md:space-x-4 w-full text-xs">
                                     
-                                    <div class="w-full flex flex-col mb-3">
+                                    <div class="w-full flex flex-col mb-3" id="bandMemeberContainer">
                                         <label class="font-semibold text-white py-2">band memebers<abbr title="required">*</abbr></label>
-                                        <input placeholder="band Name" name="memebers"class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4" required="required" type="text" name="integration[shop_name]" id="integration_shop_name">
-                                         
+                                        <input placeholder="band" name="memebers"class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4" required="required" type="text" >
                                     </div>
+                                    <span class="text-4xl font-bold text-white mt-7 cursor-pointer" id="addMember">+</span>
                                 </div>
                                 <div class="md:flex flex-row md:space-x-4 w-full text-xs">
                                     <div class="mb-3 space-y-2 w-full text-xs">
                                         <label class="font-semibold text-white py-2">band realse date <abbr title="required">*</abbr></label>
-                                        <input placeholder="band Name" name="band_creating_date"class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4" required="required" type="date" name="integration[shop_name]" id="integration_shop_name">
+                                        <input placeholder="band Name" name="band_creating_date"class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4" required="required" type="date" >
                                         <p class="text-red text-xs hidden">Please fill out this field.</p>
                                     </div>
                                     
@@ -102,3 +102,15 @@
         background-repeat: no-repeat;
     }
 </style>
+
+<script>
+    // const addMember = document.getElementById('addMember');
+    // const bandMemeberContainer = document.getElementById('bandMemeberContainer');
+    
+    // addMember.addEventListener('click', _ => {
+    //     const moreMemebers = document.createElement('input');
+    //     moreMemebers.classList.add("appearance-none", "block", "w-full", "bg-grey-lighter", "text-grey-darker", "border", "border-grey-lighter", "rounded-lg", "h-10", "px-4");
+    //     moreMemebers.placeholder = ""
+    //     bandMemeberContainer.appendChild(moreMemebers);
+    // })
+</script>

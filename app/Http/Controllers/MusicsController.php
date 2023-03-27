@@ -101,7 +101,7 @@ class MusicsController extends Controller
             Likes::create($formFields);
         }
 
-        return redirect('/');
+        return redirect()->back();
     }
 
    
