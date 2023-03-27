@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 
 class MusicsController extends Controller
 {
+    // It's better to use DTO instead of putting the gets here    
     // display the music page 
     public function displayMusicPage()
     {

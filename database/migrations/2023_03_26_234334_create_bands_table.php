@@ -13,12 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('artistes', function (Blueprint $table) {
+        Schema::create('bands', function (Blueprint $table) {
             $table->id();
-            $table->string('artiste_name')->unique(); // You should always do the columns validation the migration 
-            $table->string('artiste_image'); // specific table 
-            $table->string('artiste_country'); // Create aspecif table for country 
-            $table->date('artiste_brithday');
             $table->timestamps();
         });
     }
@@ -30,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('artistes');
+        Schema::dropIfExists('bands');
     }
 };

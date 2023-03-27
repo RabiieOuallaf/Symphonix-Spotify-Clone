@@ -10,8 +10,8 @@ class Artiste extends Model
     use HasFactory;
 
     protected $fillable = [
-        'artiste_name',
-        'artiste_image',
+        'artiste_name', // Mass assigemnt 
+        'artiste_image', // Guared = to not fill a column 
         'artiste_country',
         'artiste_brithday'
     ];

@@ -27,13 +27,14 @@ use App\Models\Playlist;
 */
 // Generale routing 
 Route::get('/', [PagesController::class, 'Main'])
-    ->middleware(['auth', 'auth:web']);
+    ->middleware(['auth', 'auth:web']); // Rolemiddleware => Role
 
 // Register routing 
 Route::get('/register' , [UsersController::class , 'registerPage']);
 Route::post('/register/authentication', [UsersController::class, 'storeUserData']);
 
 // Login routing 
+// Route::resource('/login/create') => a short hand 
 
 Route::get('/login', [UsersController::class, 'loginPage'])->name('login');
 Route::post('/login/authentication', [UsersController::class, 'credentialsVerification']);

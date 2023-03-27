@@ -39,15 +39,7 @@
                         <div class="block w-px h-6 mx-3 bg-gray-400 bg-neutral-800"></div>
                     </li>
 
-                    <li>
-                        <div class="flex items-center mr-4 hover:text-blue-100 cursor-pointer" onclick="location.href='/updateMusic'">
-
-                            <span class="inline-flex mr-1">
-                                <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                            </span>
-                            Update Music
-                        </div>
-                    </li>
+                    
                     <li>
                         <div class="block w-px h-6 mx-3 bg-gray-400 bg-neutral-800"></div>
                     </li>

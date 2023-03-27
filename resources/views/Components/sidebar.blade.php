@@ -22,7 +22,6 @@
             <i class="fa-solid fa-list mx-2"></i>
             <span>Playlist</span>
         </div>
-
         <!-- faivorites -->
         <div class="faivorites cursor-pointer hover:text-violet-600 ease-in-out duration-200">
             <i class="fa-solid fa-bookmark mx-2"></i>
@@ -32,11 +31,7 @@
    </div>
 
    <div class="sidebar-options text-zinc-400 my-20 text-center flex flex-col gap-7">
-        <!-- Settings -->
-        <div class="settings cursor-pointer hover:text-violet-600 ease-in-out duration-200 mx-2">
-            <i class="fa-solid fa-gear"></i>
-            <span>Settings</span>
-        </div>
+       
 
         <!-- logout -->
         <div class="logout cursor-pointer hover:text-violet-600 ease-in-out duration-200 mx-2">

@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('band_name');
             $table->string('band_banner');
             $table->string('band_creating_date');
+            $table->string('memebers');
             $table->string('band_country');
             $table->timestamps();
         });
