@@ -23,7 +23,7 @@
             <span>Playlist</span>
         </div>
         <!-- faivorites -->
-        <div class="faivorites cursor-pointer hover:text-violet-600 ease-in-out duration-200">
+        <div class="faivorites cursor-pointer hover:text-violet-600 ease-in-out duration-200" onclick="location.href='/faivorites'">
             <i class="fa-solid fa-bookmark mx-2"></i>
             <span>Faivorites</span>
         </div>

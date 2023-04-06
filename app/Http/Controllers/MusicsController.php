@@ -29,6 +29,11 @@ class MusicsController extends Controller
     {
         return view('music.addToPlaylist', ['music' => $music]);
     }
+    // Load faivorites page
+        public function faivoritesPage(Likes $likes) {
+            $musics = $likes->musics;
+            return view('music.favorites', compact('musics'));
+        } 
 
     // ==== ***  MUSIC CRUD *** === //
 

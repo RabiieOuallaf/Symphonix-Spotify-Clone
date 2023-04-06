@@ -16,7 +16,7 @@ class CommentsController extends Controller
             'music_id' => 'required'
         ]);
         if(Comment::create($formFields)) {
-            return redirect('/');
+            return redirect()->back();
         };
     }
     // Delte comment 

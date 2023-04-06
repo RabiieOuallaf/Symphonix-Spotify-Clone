@@ -97,3 +97,4 @@ Route::get('/songs/search', 'SongsController@search')->name('songs.search');
 // Like route 
 
 Route::post('/music/like', [MusicsController::class, 'likeSong'])->middleware('auth');
+Route::get('/faivorites', [MusicsController::class , 'faivoritesPage']);

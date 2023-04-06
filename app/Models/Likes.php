@@ -12,4 +12,12 @@ class Likes extends Model
         'music_id',
         'user_id'
     ];
+
+    public function music() {
+        return $this->belongsToMany(Music::class);
+    }
+
+    public function user() {
+        return $this->belongsToMany(User::class);
+    }
 }
